@@ -1,149 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Fragment.SetFragment">
 
 
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/set_prom_toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="?attr/colorPrimary"-->
-        <!--android:elevation="4dp"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
-        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/prom_title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="약속제목" />
-
-        <EditText
-            android:id="@+id/prom_title_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="약속제목을 입력하세요"
-            android:inputType="textPersonName" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/prom_start_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="약속 시작 시간" />
-
-        <TextView
-            android:id="@+id/prom_start_time_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <DatePicker
-            android:id="@+id/prom_datepicker"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner">
-
-        </DatePicker>
-
-        <TimePicker
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/prom_timepicker"
-            android:timePickerMode="spinner" >
-        </TimePicker>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:text="약속장소" />
-
-        <TextView
-            android:id="@+id/prom_place_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="20" />
-
-        <Button
-            android:id="@+id/prom_place_btn"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="위치" />
+            android:orientation="vertical" >
+            <ImageView
+                android:id="@+id/profile_image"
+                android:src="@mipmap/ic_launcher"
+                android:layout_gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="150dp"/>
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_gravity="center"
+                android:textSize="35dp"
+                android:text="김동욱"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/set_profile_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="프로필변경"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <Button
+                android:id="@+id/set_alarm_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="알림 설정" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="40"
-            android:text="인원" />
+            <Button
+                android:id="@+id/set_chatting_vtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="채팅 설정" />
+        </LinearLayout>
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/prom_cnt_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="40"
-            android:text="" />
-
-
-        <Button
-            android:id="@+id/prom_friend_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="추가" />
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/prom_set_friend_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
-</LinearLayout>
+</FrameLayout>

@@ -1180,6 +1180,7 @@ id parent_matrix
 id percent
 id pin
 id place
+id profile_image
 id progress_circular
 id progress_horizontal
 id prom_cnt_text
@@ -1226,6 +1227,9 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id set_alarm_btn
+id set_chatting_vtn
+id set_profile_btn
 id shortcut
 id showCustom
 id showHome
@@ -1265,6 +1269,7 @@ id textStart
 id textView
 id textView3
 id text_input_password_toggle
+id text_name
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1358,6 +1363,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_add_appointment
 layout fragment_chat
 layout fragment_friends
 layout fragment_set

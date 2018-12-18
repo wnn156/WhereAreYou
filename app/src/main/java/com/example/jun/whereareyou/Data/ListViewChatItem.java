@@ -9,6 +9,7 @@ public class ListViewChatItem implements Parcelable {
     private String chat_name;
     private String place;
     private String time;
+
     //private ArrayList<User> users;
 
     public ListViewChatItem(String chat_name, String place, String time) {

@@ -8,10 +8,8 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="28" />
 
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <meta-data
         android:name="com.kakao.sdk.AppKey"
@@ -27,14 +25,18 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.jun.whereareyou.Activity.MainActivity" >
+        <activity android:name="com.example.jun.whereareyou.Activity.MainActivity" />
+        <activity android:name="com.example.jun.whereareyou.Activity.ChattingActivity" />
+        <activity android:name="com.example.jun.whereareyou.Activity.MapActivity" />
+        <activity android:name="com.example.jun.whereareyou.Activity.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.jun.whereareyou.Activity.ChattingActivity" />
+        <activity android:name="com.example.jun.whereareyou.Activity.RegistActivity" />
+        <activity android:name="com.example.jun.whereareyou.Activity.PromFriendsActivity" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
