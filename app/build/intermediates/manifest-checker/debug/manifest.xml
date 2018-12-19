@@ -37,14 +37,16 @@
         <activity android:name="com.example.jun.whereareyou.Activity.ChatActivity" />
         <activity android:name="com.example.jun.whereareyou.Activity.MapActivity" />
         <activity android:name="com.example.jun.whereareyou.Activity.LoginActivity" >
+        </activity>
+        <activity android:name="com.example.jun.whereareyou.Activity.RegistActivity" />
+        <activity android:name="com.example.jun.whereareyou.Activity.PromFriendsActivity" />
+        <activity android:name="com.example.jun.whereareyou.Activity.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.jun.whereareyou.Activity.RegistActivity" />
-        <activity android:name="com.example.jun.whereareyou.Activity.PromFriendsActivity" />
 
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"
