@@ -11,7 +11,9 @@ import android.widget.ListView;
 
 import com.example.jun.whereareyou.Adapter.ChatAdapter;
 import com.example.jun.whereareyou.Data.ChatDTO;
+import com.example.jun.whereareyou.Data.ListViewChatItem;
 import com.example.jun.whereareyou.Data.User;
+import com.example.jun.whereareyou.Module.UpdateWorker;
 import com.example.jun.whereareyou.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -20,11 +22,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 
 public class ChatActivity extends AppCompatActivity {
 
-    private ArrayList<User> users;
     private String CHAT_NAME;
     private String USER_NAME;
     private ChatAdapter adapter;
@@ -33,12 +38,22 @@ public class ChatActivity extends AppCompatActivity {
     private Button chat_send;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
-
+    private ListViewChatItem listViewChatItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+
+        PeriodicWorkRequest.Builder UpdateBuilder =
+                new PeriodicWorkRequest.Builder(UpdateWorker.class, 15,
+                        TimeUnit.MINUTES);
+// ...if you want, you can apply constraints to the builder here...
+
+// Create the actual work object:
+        PeriodicWorkRequest UpdateCheckWork = UpdateBuilder.build();
+// Then enqueue the recurring task:
+        WorkManager.getInstance().enqueue(UpdateCheckWork);
 
         // 위젯 ID 참조
         chat_view = (ListView) findViewById(R.id.chat_view);
@@ -47,9 +62,10 @@ public class ChatActivity extends AppCompatActivity {
 
         // 로그인 화면에서 받아온 채팅방 이름, 유저 이름 저장
         Intent intent = getIntent();
+        listViewChatItem = intent.getParcelableExtra("ListViewChatItem");
         CHAT_NAME = intent.getStringExtra("chatName");
         USER_NAME = intent.getStringExtra("userName");
-        users = intent.getParcelableArrayListExtra("User");
+
         // 채팅 방 입장
         openChat(CHAT_NAME);
 
@@ -86,7 +102,7 @@ public class ChatActivity extends AppCompatActivity {
         // 리스트 어댑터 생성 및 세팅
 
 
-        adapter = new ChatAdapter(this,R.layout.listitem_chat, users);
+        adapter = new ChatAdapter(this,R.layout.listitem_chat, listViewChatItem.getUsers());
         chat_view.setAdapter(adapter);
 
 

@@ -9,7 +9,8 @@ public class ListViewChatItem implements Parcelable {
     private String chat_name;
     private String place;
     private String time;
-
+    private String key;
+    private ArrayList<User> users;
 
     //private ArrayList<User> users;
 
@@ -23,6 +24,8 @@ public class ListViewChatItem implements Parcelable {
         chat_name = in.readString();
         place = in.readString();
         time = in.readString();
+        key = in.readString();
+        users = in.readArrayList(User.class.getClassLoader());
     }
 
     public static final Creator<ListViewChatItem> CREATOR = new Creator<ListViewChatItem>() {
@@ -37,6 +40,21 @@ public class ListViewChatItem implements Parcelable {
         }
     };
 
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getChat_name() {
         return chat_name;
@@ -72,5 +90,7 @@ public class ListViewChatItem implements Parcelable {
         dest.writeString(chat_name);
         dest.writeString(place);
         dest.writeString(time);
+        dest.writeString(key);
+        dest.writeList(users);
     }
 }

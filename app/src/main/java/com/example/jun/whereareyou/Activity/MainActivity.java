@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.jun.whereareyou.Data.GpsInfo;
 import com.example.jun.whereareyou.Data.ListViewChatItem;
+import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.Dialog.Prom_Dialog;
 import com.example.jun.whereareyou.Fragment.ChatFragment;
 import com.example.jun.whereareyou.Fragment.FriendsFragment;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isAccessFineLocation = false;
     private boolean isAccessCoarseLocation = false;
     private boolean isPermission = false;
+    private User me;
     // GPSTracker class
     private static GpsInfo gps;
     @Override
@@ -57,16 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PeriodicWorkRequest.Builder UpdateBuilder =
-                new PeriodicWorkRequest.Builder(UpdateWorker.class, 12,
-                        TimeUnit.HOURS);
-// ...if you want, you can apply constraints to the builder here...
-
-// Create the actual work object:
-        PeriodicWorkRequest UpdateCheckWork = UpdateBuilder.build();
-// Then enqueue the recurring task:
-        WorkManager.getInstance().enqueue(UpdateCheckWork);
-
+        me = getIntent().getParcelableExtra("User");
+        Log.d("User Main",me.toString());
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -95,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab2.setOnClickListener(this);
 
         callPermission();
+
     }
 
 
@@ -184,12 +179,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             //return PlaceholderFragment.newInstance(position + 1);
-            if (position == 0)
-                return new FriendsFragment();
-            else if(position==1)
-                return new ChatFragment();
-            else
-                return new SetFragment();
+            Fragment fragment;
+            if (position == 0) {
+                fragment = new FriendsFragment();
+                Bundle args = new Bundle();
+                args.putParcelable("User", me);
+                Log.d("User Friends",me.toString());
+                fragment.setArguments(args);
+                return fragment;
+            }
+            else if(position==1) {
+                fragment = new ChatFragment();
+                Bundle args = new Bundle();
+                args.putParcelable("User", me);
+                Log.d("User Chat",me.toString());
+                fragment.setArguments(args);
+                return fragment;
+            }
+            else {
+                fragment = new SetFragment();
+                Bundle args = new Bundle();
+                args.putParcelable("User", me);
+                fragment.setArguments(args);
+                return fragment;
+            }
         }
 
         @Override

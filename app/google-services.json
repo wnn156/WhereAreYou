@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1053096240106",
+    "firebase_url": "https://whereareyou-dfa18.firebaseio.com",
+    "project_id": "whereareyou-dfa18",
+    "storage_bucket": "whereareyou-dfa18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053096240106:android:b057e6a572e4d278",
+        "android_client_info": {
+          "package_name": "com.example.jun.whereareyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053096240106-tt1vonpe162gcj5rdk7hbcn5gc38ge27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQzhfe_3qWz1WelR2ghQuyIv-4oikI7RY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

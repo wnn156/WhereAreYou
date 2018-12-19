@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.example.jun.whereareyou.Adapter.FriendListAdapter;
 import com.example.jun.whereareyou.Data.ListViewFriendItem;
+import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 
 import java.util.ArrayList;
@@ -20,7 +21,16 @@ import java.util.ArrayList;
  */
 public class FriendsFragment extends Fragment {
 
+    private static User me;
 
+    public static FriendsFragment newInstance(){
+        Bundle args = new Bundle();
+
+        FriendsFragment fragment = new FriendsFragment();
+        args.putParcelable("User",me);
+        fragment.setArguments(args);
+        return fragment;
+    }
     public FriendsFragment() {
         // Required empty public constructor
     }
@@ -30,6 +40,10 @@ public class FriendsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_friends, container, false);
+
+
+        me = (User)getArguments().get("User");
+
 
         ListView listView = (ListView)view.findViewById(R.id.listView);
         ArrayList<ListViewFriendItem> data=new ArrayList<>();

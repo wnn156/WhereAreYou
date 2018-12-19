@@ -9,7 +9,9 @@ public class User implements Parcelable {
     public User(){
         email = null;
     }
-
+    public User(String email){
+        this.email = email;
+    }
     public User(Parcel in) {
         email = in.readString();
     }
@@ -41,6 +43,14 @@ public class User implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+
         dest.writeString(email);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                '}';
     }
 }

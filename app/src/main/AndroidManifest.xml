@@ -20,6 +20,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.ChattingActivity" />
+        <activity android:name=".Activity.ChatActivity"/>
         <activity android:name=".Activity.MapActivity" />
         <activity android:name=".Activity.LoginActivity">
             <intent-filter>

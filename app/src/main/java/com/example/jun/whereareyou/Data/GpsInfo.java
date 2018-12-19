@@ -12,7 +12,10 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
+import android.os.Looper;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 
@@ -34,10 +37,10 @@ public class GpsInfo extends Service implements LocationListener {
     double lon; // 경도
 
     // 최소 GPS 정보 업데이트 거리 10미터
-    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
+    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0;
 
     // 최소 GPS 정보 업데이트 시간 밀리세컨이므로 1분
-    private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1;
+    private static final long MIN_TIME_BW_UPDATES = 2000;
 
     protected LocationManager locationManager;
 
@@ -48,6 +51,9 @@ public class GpsInfo extends Service implements LocationListener {
 
     @TargetApi(23)
     public Location getLocation() {
+        HandlerThread t = new HandlerThread("my handlerthread");
+        t.start();
+
         if ( Build.VERSION.SDK_INT >= 23 &&
                 ContextCompat.checkSelfPermission(
                         mContext, android.Manifest.permission.ACCESS_FINE_LOCATION )
@@ -80,7 +86,7 @@ public class GpsInfo extends Service implements LocationListener {
                     locationManager.requestLocationUpdates(
                             LocationManager.NETWORK_PROVIDER,
                             MIN_TIME_BW_UPDATES,
-                            MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                            MIN_DISTANCE_CHANGE_FOR_UPDATES, this, t.getLooper());
 
                     if (locationManager != null) {
                         location = locationManager
@@ -98,7 +104,7 @@ public class GpsInfo extends Service implements LocationListener {
                         locationManager.requestLocationUpdates(
                                 LocationManager.GPS_PROVIDER,
                                 MIN_TIME_BW_UPDATES,
-                                MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                                MIN_DISTANCE_CHANGE_FOR_UPDATES, this, t.getLooper());
                         if (locationManager != null) {
                             location = locationManager
                                     .getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -206,4 +212,5 @@ public class GpsInfo extends Service implements LocationListener {
         // TODO Auto-generated method stub
 
     }
+
 }

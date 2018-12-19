@@ -7,9 +7,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
+import com.example.jun.whereareyou.Module.UpdateWorker;
 import com.example.jun.whereareyou.R;
 
 import net.daum.mf.map.api.MapView;
+
+import java.util.concurrent.TimeUnit;
+
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 public class ChattingActivity extends AppCompatActivity {
 
@@ -17,6 +23,8 @@ public class ChattingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatting);
+
+
 
     }
     @Override
