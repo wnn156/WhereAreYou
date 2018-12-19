@@ -1191,8 +1191,11 @@ id icon_only
 id ifRoom
 id image
 id imageView
+<<<<<<< HEAD
 id imageView2
 id img_profile
+=======
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
 id info
 id invisible
 id italic
@@ -1320,9 +1323,12 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
 id textView3
+id textView5
 id text_input_password_toggle
 id text_name
+id text_user_info
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1340,11 +1346,11 @@ id transition_scene_layoutid_cache
 id transition_transform
 id txt_message
 id txt_time
-id txt_userName
 id uniform
 id unlabeled
 id up
 id useLogo
+id userName
 id user_id
 id view_offset_helper
 id visible
@@ -1407,6 +1413,7 @@ layout activity_main
 layout activity_map
 layout activity_prom_friends
 layout activity_regist
+layout addfriends_dialog
 layout chatlist_item
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
