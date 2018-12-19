@@ -1112,6 +1112,7 @@ id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id etEmail
+id etNickname
 id etPassword
 id etPasswordConfirm
 id exitUntilCollapsed
