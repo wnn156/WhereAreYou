@@ -1,6 +1,7 @@
 package com.example.jun.whereareyou.Activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.design.widget.TabLayout;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 import com.example.jun.whereareyou.Data.GpsInfo;
 import com.example.jun.whereareyou.Data.ListViewChatItem;
 import com.example.jun.whereareyou.Data.User;
+import com.example.jun.whereareyou.Dialog.AddFriends_Dialog;
 import com.example.jun.whereareyou.Dialog.Prom_Dialog;
 import com.example.jun.whereareyou.Fragment.ChatFragment;
 import com.example.jun.whereareyou.Fragment.FriendsFragment;
@@ -141,6 +143,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fab2:
                 anim();
+                //여기 서 인텐트.
+                AddFriends_Dialog addFriends_dialog = new AddFriends_Dialog(this);
+                addFriends_dialog.setDialogListener(new AddFriends_Dialog.MyDialogListener() {
+                    @Override
+                    public void onPositiveClicked(ListViewChatItem item) {
+                        setResult(item);
+                    }
+
+                    @Override
+                    public void onNegativeClicked() {
+                        Log.d("MyDialogListener","onNegativeClicked");
+                    }
+                });
+                addFriends_dialog.show();
                 Toast.makeText(this, "Button2", Toast.LENGTH_SHORT).show();
                 break;
         }
