@@ -1190,7 +1190,6 @@ id icon_only
 id ifRoom
 id image
 id imageView
-id img_profile
 id info
 id invisible
 id italic
@@ -1338,11 +1337,11 @@ id transition_scene_layoutid_cache
 id transition_transform
 id txt_message
 id txt_time
-id txt_userName
 id uniform
 id unlabeled
 id up
 id useLogo
+id userName
 id user_id
 id view_offset_helper
 id visible

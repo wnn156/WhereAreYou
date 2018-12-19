@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,6 +68,8 @@ public class ChatActivity extends AppCompatActivity {
         CHAT_NAME = intent.getStringExtra("chatName");
         USER_NAME = intent.getStringExtra("userName");
 
+        adapter = new ChatAdapter(this, R.layout.listitem_chat,listViewChatItem.getUsers());
+        chat_view.setAdapter(adapter);
         // 채팅 방 입장
         openChat(CHAT_NAME);
 
@@ -89,7 +93,7 @@ public class ChatActivity extends AppCompatActivity {
         ChatDTO chatDTO = dataSnapshot.getValue(ChatDTO.class);
         chatDTO.setFirebaseKey(dataSnapshot.getKey());
         adapter.add(chatDTO);
-        chat_view.setAdapter(adapter);
+
         chat_view.smoothScrollToPosition(adapter.getCount());
     }
 
@@ -100,11 +104,6 @@ public class ChatActivity extends AppCompatActivity {
 
     private void openChat(String chatName) {
         // 리스트 어댑터 생성 및 세팅
-
-
-        adapter = new ChatAdapter(this,R.layout.listitem_chat, listViewChatItem.getUsers());
-        chat_view.setAdapter(adapter);
-
 
         // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
         databaseReference.child("CHAT").child(chatName).addChildEventListener(new ChildEventListener() {
@@ -134,5 +133,45 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.list_menu, menu);
+
+        return true;
+
+    }
+
+
+
+    /**
+
+     * 메뉴 아이템을 클릭했을 때 발생되는 이벤트...
+
+     * @param item
+
+     * @return
+
+     */
+
+    @Override
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+
+        int id = item.getItemId();
+
+
+
+        if( id == R.id.showMap ){
+            Intent intent = new Intent(ChatActivity.this, MapActivity.class);
+            startActivity(intent);
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 }
