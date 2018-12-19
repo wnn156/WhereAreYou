@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistActivity"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -15,15 +14,22 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:hint="Email"
+        android:hint="이메일 입력"
         android:id="@+id/etEmail" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="닉네임 입력"
+        android:id="@+id/etNickname" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:hint="Password"
+        android:hint="패스워드 입력"
         android:id="@+id/etPassword" />
 
     <EditText
@@ -31,7 +37,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:hint="Password"
+        android:hint="패스워드 확인"
         android:id="@+id/etPasswordConfirm" />
 
     <LinearLayout
