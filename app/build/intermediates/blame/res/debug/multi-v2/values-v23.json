@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
+            "outputFile": "C:\\Users\\user\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\work-runtime-1.0.0-alpha13.aar\\0450f2f675fb2fd00aa5dda78ebb43f0\\res\\values-v23\\values-v23.xml",
+=======
             "outputFile": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\work-runtime-1.0.0-alpha13.aar\\4a6234cbb6ad7ca1026b6e5032bbf751\\res\\values-v23\\values-v23.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +21,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\7b7a85ef8fde3095a73c49c8b3480e6e\\res\\values-v23\\values-v23.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\8aaece8e3fb1e74fcf0b109e699bdf2b\\res\\values-v23\\values-v23.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -33,7 +44,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\f5c24bae9402819ed9eab0d0392c1f6e\\res\\values-v23\\values-v23.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\values-v23\\values-v23.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

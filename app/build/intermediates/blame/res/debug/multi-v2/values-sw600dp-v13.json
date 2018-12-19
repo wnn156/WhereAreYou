@@ -1,10 +1,27 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
+            "outputFile": "C:\\Users\\user\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\f5c24bae9402819ed9eab0d0392c1f6e\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\4201d794ebe47f4e82fd8eca2955be27\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+=======
             "outputFile": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\88580478ca341ff78874209ba81e3cc7\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

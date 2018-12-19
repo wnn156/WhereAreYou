@@ -53,7 +53,6 @@ public class GpsInfo extends Service implements LocationListener {
     public Location getLocation() {
         HandlerThread t = new HandlerThread("my handlerthread");
         t.start();
-
         if ( Build.VERSION.SDK_INT >= 23 &&
                 ContextCompat.checkSelfPermission(
                         mContext, android.Manifest.permission.ACCESS_FINE_LOCATION )

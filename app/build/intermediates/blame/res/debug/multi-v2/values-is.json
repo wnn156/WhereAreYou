@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
+            "outputFile": "C:\\Users\\user\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is\\values-is.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\1586d54d81e56ca6c797807f58ad1fa9\\res\\values-is\\values.xml",
+=======
             "outputFile": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is\\values-is.xml",
             "map": [
                 {
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\3e44c1802763861ffb5eba443ae82c88\\res\\values-is\\values.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +28,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\f5c24bae9402819ed9eab0d0392c1f6e\\res\\values-is\\values-is.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\values-is\\values-is.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +49,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\98c9361e9f7e7ce605df91b8768ccf7a\\res\\values-is\\values-is.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\a3e3fe3bd5295da1606e000f9e031bd7\\res\\values-is\\values-is.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -55,7 +70,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\b8bc34b8b964ed405229481a4f32be7e\\res\\values-is\\values.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\386752e6a5a6ab502ef35bb082ecbc71\\res\\values-is\\values.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

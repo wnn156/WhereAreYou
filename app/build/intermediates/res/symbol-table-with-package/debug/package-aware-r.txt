@@ -1057,6 +1057,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable icon
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1190,6 +1191,11 @@ id icon_only
 id ifRoom
 id image
 id imageView
+<<<<<<< HEAD
+id imageView2
+id img_profile
+=======
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
 id info
 id invisible
 id italic

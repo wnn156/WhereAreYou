@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 #Thu Dec 20 05:09:47 KST 2018
+=======
+<<<<<<< HEAD
+#Thu Dec 20 04:55:34 KST 2018
+base.0=C\:\\Users\\user\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+=======
+#Thu Dec 20 03:53:47 KST 2018
+>>>>>>> 68c83459c028508a19d44afb7608ca0ac89fabc8
 base.0=C\:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
 path.0=classes.dex
 renamed.0=classes.dex
