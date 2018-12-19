@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.jun.whereareyou.Activity.ChatActivity;
-import com.example.jun.whereareyou.Activity.ChattingActivity;
 import com.example.jun.whereareyou.Adapter.ChatlistAdapter;
 import com.example.jun.whereareyou.Data.ListViewChatItem;
 import com.example.jun.whereareyou.Data.User;

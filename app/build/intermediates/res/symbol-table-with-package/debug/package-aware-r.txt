@@ -1193,7 +1193,10 @@ id ifRoom
 id image
 id imageView
 id imageView2
+<<<<<<< HEAD
 id imageView3
+=======
+>>>>>>> 3c0fa261511df141f473d8317145e309c8e58782
 id info
 id invisible
 id italic
