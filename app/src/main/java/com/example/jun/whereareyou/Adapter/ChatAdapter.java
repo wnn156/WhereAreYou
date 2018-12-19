@@ -83,7 +83,7 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
 
     @Override
     public int getViewTypeCount() {
-        return 2;
+        return users.size();
     }
 
     @Override
