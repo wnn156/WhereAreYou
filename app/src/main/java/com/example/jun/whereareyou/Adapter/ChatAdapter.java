@@ -13,6 +13,8 @@ import com.example.jun.whereareyou.Data.ChatDTO;
 import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -83,13 +85,14 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
 
     @Override
     public int getViewTypeCount() {
-        return users.size();
+        return 2;
     }
 
     @Override
     public int getItemViewType(int position) {
         String email = getItem(position).getUserName();
-        if (email.equals(users.get(position))) {
+        Log.d("GetItem.getUserName", getItem(position).getUserName());
+        if (email.equals(users.get(0).getEmail())) {
             return TYPE_MY_SELF; // 나의 채팅내용
         } else {
             return TYPE_ANOTHER; // 상대방의 채팅내용
@@ -98,20 +101,20 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
 
     private class ViewHolderAnother {
         private ImageView mImgProfile;
+        private TextView mUserName;
         private TextView mTxtUserName;
         private TextView mTxtMessage;
         private TextView mTxtTime;
 
         private void bindView(View convertView) {
-            mImgProfile = (ImageView) convertView.findViewById(R.id.img_profile);
-            mTxtUserName = (TextView) convertView.findViewById(R.id.txt_userName);
+            mUserName = convertView.findViewById(R.id.userName);
             mTxtMessage = (TextView) convertView.findViewById(R.id.txt_message);
             mTxtTime = (TextView) convertView.findViewById(R.id.txt_time);
         }
 
         private void setData(int position) {
             ChatDTO chatData = getItem(position);
-            mTxtUserName.setText(chatData.getUserName());
+            mUserName.setText(chatData.getUserName());
             mTxtMessage.setText(chatData.getMessage());
             mTxtTime.setText(mSimpleDateFormat.format(chatData.getTime()));
         }
