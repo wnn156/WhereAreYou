@@ -1,10 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Android\\WhereAreYou\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+<<<<<<< HEAD
+            "outputFile": "C:\\Users\\user\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\bc7cf69877cb11ccfa2d7dcf96cda31e\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\f5c24bae9402819ed9eab0d0392c1f6e\\res\\values-large-v4\\values-large-v4.xml",
+=======
+            "outputFile": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\values-large-v4\\values-large-v4.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +21,11 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\db082924a967ae0074c75320dca0858e\\res\\values-large-v4\\values-large-v4.xml",
+<<<<<<< HEAD
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\4201d794ebe47f4e82fd8eca2955be27\\res\\values-large-v4\\values-large-v4.xml",
+=======
+                    "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\88580478ca341ff78874209ba81e3cc7\\res\\values-large-v4\\values-large-v4.xml",
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

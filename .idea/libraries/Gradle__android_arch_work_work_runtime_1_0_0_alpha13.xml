@@ -1,8 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: android.arch.work:work-runtime-1.0.0-alpha13">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-runtime-1.0.0-alpha13.aar/2b5f53b21b183ffa78abbe0ae5aa07bf/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-runtime-1.0.0-alpha13.aar/2b5f53b21b183ffa78abbe0ae5aa07bf/jars/classes.jar!/" />
+<<<<<<< HEAD
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-runtime-1.0.0-alpha13.aar/0450f2f675fb2fd00aa5dda78ebb43f0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-runtime-1.0.0-alpha13.aar/0450f2f675fb2fd00aa5dda78ebb43f0/jars/classes.jar!/" />
+=======
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-runtime-1.0.0-alpha13.aar/4a6234cbb6ad7ca1026b6e5032bbf751/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/work-runtime-1.0.0-alpha13.aar/4a6234cbb6ad7ca1026b6e5032bbf751/res" />
+>>>>>>> 820cd29d5de466b801cf2e53320b33d5199c1030
     </CLASSES>
     <JAVADOC />
     <SOURCES>
