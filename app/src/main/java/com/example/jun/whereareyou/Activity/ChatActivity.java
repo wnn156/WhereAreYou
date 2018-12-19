@@ -48,7 +48,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
         PeriodicWorkRequest.Builder UpdateBuilder =
-                new PeriodicWorkRequest.Builder(UpdateWorker.class, 15,
+                new PeriodicWorkRequest.Builder(UpdateWorker.class, 20,
                         TimeUnit.MINUTES);
 // ...if you want, you can apply constraints to the builder here...
 
