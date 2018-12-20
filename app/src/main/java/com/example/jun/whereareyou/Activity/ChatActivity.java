@@ -78,7 +78,7 @@ public class ChatActivity extends AppCompatActivity {
         USER_NAME = intent.getStringExtra("userName");
         CHAT_NAME = intent.getStringExtra("chatName");//채팅방 KEY (디비에서 저장되있는 형식)
 
-        getSupportActionBar().setTitle(CHAT_NAME);//툴바명을 채팅방이름으로 변경
+        getSupportActionBar().setTitle(CHAT_ID);//툴바명을 채팅방이름으로 변경
 
         adapter = new ChatAdapter(this, R.layout.listitem_chat,listViewChatItem.getUsers());
         chat_view.setAdapter(adapter);

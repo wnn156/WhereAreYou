@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- selector가 선택되지 않았을 때 family_orange를 보여줌 -->
+    <item android:state_checked="false" android:drawable="@drawable/unlike" />
+    <!-- selector가 선택되었을 때 family_gray를 보여줌 -->
+    <item android:state_checked="true" android:drawable="@drawable/like" />
+</selector>
