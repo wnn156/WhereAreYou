@@ -33,7 +33,6 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.jun.whereareyou.Activity.MainActivity" />
-        <activity android:name="com.example.jun.whereareyou.Activity.ChattingActivity" />
         <activity android:name="com.example.jun.whereareyou.Activity.ChatActivity" />
         <activity android:name="com.example.jun.whereareyou.Activity.MapActivity" />
         <activity android:name="com.example.jun.whereareyou.Activity.LoginActivity" >

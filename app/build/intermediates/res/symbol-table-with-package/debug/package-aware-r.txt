@@ -1193,10 +1193,7 @@ id ifRoom
 id image
 id imageView
 id imageView2
-<<<<<<< HEAD
 id imageView3
-=======
->>>>>>> 3c0fa261511df141f473d8317145e309c8e58782
 id info
 id invisible
 id italic
@@ -1408,7 +1405,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_chat
-layout activity_chatting
 layout activity_login
 layout activity_main
 layout activity_map
