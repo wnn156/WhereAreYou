@@ -28,24 +28,50 @@
             <ListView
                 android:id="@+id/chat_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:dividerHeight="0px"
+                android:divider="#ffffff" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/chat_sent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="send" />
+            android:layout_height="46dp"
+            android:orientation="horizontal"
+            android:background="@drawable/chat_edit"
+            android:layout_marginBottom="10dp"
+            android:gravity="right">
 
             <EditText
                 android:id="@+id/chat_edit"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="24dp"
+                android:background="@null"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"/>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp" />
+                <Button
+                    android:id="@+id/chat_sent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/chat_send_message"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="7dp" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

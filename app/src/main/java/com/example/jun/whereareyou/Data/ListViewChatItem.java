@@ -6,10 +6,10 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 
 public class ListViewChatItem implements Parcelable {
-    private String chat_name;
+    private String chat_name; // 약속 이름
     private String place;
     private String time;
-    private String key;
+    private String key; // 채팅방 이름
     private ArrayList<User> users;
 
     //private ArrayList<User> users;
