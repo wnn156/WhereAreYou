@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.jun.whereareyou.Adapter.FriendListAdapter;
-import com.example.jun.whereareyou.Data.ListViewFriendItem;
 import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 
@@ -46,12 +45,12 @@ public class FriendsFragment extends Fragment {
 
 
         ListView listView = (ListView)view.findViewById(R.id.listView);
-        ArrayList<ListViewFriendItem> data=new ArrayList<>();
+        ArrayList<User> data=new ArrayList<>();
 
-        ListViewFriendItem friend1=new ListViewFriendItem("김동욱","5");
-        ListViewFriendItem friend2=new ListViewFriendItem("윤서원","3");
-        ListViewFriendItem friend3=new ListViewFriendItem("성경화","2");
-        ListViewFriendItem friend4=new ListViewFriendItem("안준영","3");
+        User friend1=new User("김동욱",5);
+        User friend2=new User("윤서원",3);
+        User friend3=new User("성경화",2);
+        User friend4=new User("안준영",3);
 
         data.add(friend1);
         data.add(friend2);
