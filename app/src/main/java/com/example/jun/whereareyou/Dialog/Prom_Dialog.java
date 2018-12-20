@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.jun.whereareyou.Data.ListViewChatItem;
 import com.example.jun.whereareyou.R;
-
-import java.sql.Time;
 
 public class Prom_Dialog extends Dialog implements View.OnClickListener{
     private static final int LAYOUT = R.layout.prom_dialog;
@@ -32,6 +31,8 @@ public class Prom_Dialog extends Dialog implements View.OnClickListener{
     private TextView place;
     private TextView cancelTv;
     private TextView searchTv;
+    private Button placeBtn;
+    //private Button addFriendsBtn;
 
     private String name;
 
@@ -64,6 +65,15 @@ public class Prom_Dialog extends Dialog implements View.OnClickListener{
         if(name != null){
             nameEt.setText(name);
         }
+
+        placeBtn = (Button) findViewById(R.id.promdia_place_btn);
+
+        placeBtn.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //나중에 여기로
+            }
+        });
     }
 
     @Override
@@ -85,5 +95,6 @@ public class Prom_Dialog extends Dialog implements View.OnClickListener{
     public void setDialogListener(MyDialogListener dialogListener){
         this.dialogListener = dialogListener;
     }
+
 
 }
