@@ -5,15 +5,30 @@ import android.os.Parcelable;
 
 public class User implements Parcelable {
     private String email;
+    private String name;
+    private String phone_number;
+    private double score;
+    private int count;
+
 
     public User(){
         email = null;
     }
+
     public User(String email){
         this.email = email;
     }
-    public User(Parcel in) {
+    public User(String name, double score){
+        this.name = name;
+        this.score = score;
+    }
+
+    protected User(Parcel in) {
         email = in.readString();
+        name = in.readString();
+        phone_number = in.readString();
+        score = in.readDouble();
+        count = in.readInt();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -27,6 +42,38 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public String getEmail() {
         return email;
@@ -45,12 +92,20 @@ public class User implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
 
         dest.writeString(email);
+        dest.writeString(name);
+        dest.writeString(phone_number);
+        dest.writeDouble(score);
+        dest.writeInt(count);
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", phone_number='" + phone_number + '\'' +
+                ", score=" + score +
+                ", count=" + count +
                 '}';
     }
 }
