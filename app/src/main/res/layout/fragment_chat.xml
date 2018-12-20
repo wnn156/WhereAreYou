@@ -5,10 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.ChatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ListView
-        android:id="@+id/listView"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/requestListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+        <!-- TODO: Update blank fragment layout -->
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </FrameLayout>
