@@ -16,6 +16,8 @@ import com.example.jun.whereareyou.Activity.ChatActivity;
 import com.example.jun.whereareyou.Adapter.ChatlistAdapter;
 import com.example.jun.whereareyou.Data.ListViewChatItem;
 import com.example.jun.whereareyou.Data.User;
+import com.example.jun.whereareyou.Dialog.Prom_Dialog;
+import com.example.jun.whereareyou.Dialog.Request_Dialog;
 import com.example.jun.whereareyou.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -30,11 +32,16 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class ChatFragment extends Fragment {
+    private ChatlistAdapter requestAdapter;
+    private ChatlistAdapter adapter;
 
     private static User me = null;
     private ListView listView;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+    private ArrayList<ListViewChatItem> dataRequest;
+    private ArrayList<ListViewChatItem> data;
 
     public static ChatFragment newInstance(){
         Bundle args = new Bundle();
@@ -57,8 +64,10 @@ public class ChatFragment extends Fragment {
 
         me = (User)getArguments().get("User");
 
+        final ListView requestListView = view.findViewById(R.id.requestListView);
+
         listView = (ListView)view.findViewById(R.id.listView);
-        final ArrayList<ListViewChatItem> data=new ArrayList<>();
+        data=new ArrayList<>();
 
         ListViewChatItem chat1=new ListViewChatItem("말해모앱","공대9호관","2018/12/03 18:30");
         ListViewChatItem chat2=new ListViewChatItem("디비조모임","융복관","2018/12/04 15:30");
@@ -79,7 +88,43 @@ public class ChatFragment extends Fragment {
         data.add(chat2);
         data.add(chat3);
 
-        ChatlistAdapter adapter=new ChatlistAdapter(getActivity(),R.layout.chatlist_item,data);
+        adapter=new ChatlistAdapter(getActivity(),R.layout.chatlist_item,data);
+
+
+        dataRequest = data;
+
+        requestAdapter=new ChatlistAdapter(getActivity(),R.layout.chatlist_item,dataRequest);
+        requestListView.setAdapter(requestAdapter);
+        requestListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                Request_Dialog request_dialog = new Request_Dialog(getActivity());
+                request_dialog.setDialogListener(new Request_Dialog.MyDialogListener() {  // MyDialogListener 를 구현
+                    @Override
+                    public void onPositiveClicked() {
+
+                        ListViewChatItem listViewChatItem = dataRequest.get(position);
+                        dataRequest.remove(position);
+                        data.add(listViewChatItem);
+
+                        requestAdapter.upDateList(dataRequest);
+                        adapter.upDateList(data);
+
+                        Log.d("Data", data.toString());
+                        Log.d("dataRequest",dataRequest.toString());
+
+
+                    }
+
+                    @Override
+                    public void onNegativeClicked() {
+                        Log.d("MyDialogListener","onNegativeClicked");
+                    }
+                });
+                request_dialog.show();
+            }
+        });
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

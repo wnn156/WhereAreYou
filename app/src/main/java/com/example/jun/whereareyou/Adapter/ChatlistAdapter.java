@@ -41,4 +41,9 @@ public class ChatlistAdapter extends BaseAdapter{
         time.setText(listviewitem.getTime());
         return convertView;
     }
+
+    public void upDateList(ArrayList<ListViewChatItem> listViewChatItem){
+        this.data = listViewChatItem;
+        notifyDataSetChanged();
+    }
 }
