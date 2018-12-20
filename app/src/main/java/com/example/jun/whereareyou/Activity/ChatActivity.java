@@ -74,11 +74,8 @@ public class ChatActivity extends AppCompatActivity {
         // 로그인 화면에서 받아온 채팅방 이름, 유저 이름 저장
         Intent intent = getIntent();
         listViewChatItem = intent.getParcelableExtra("ListViewChatItem");
-<<<<<<< HEAD
-        CHAT_ID = intent.getStringExtra("chatID"); //준영이 이거 chatname에서 chat id로 변경함 name이름 쓸라고 바꿨디
-=======
+
         CHAT_ID = intent.getStringExtra("chatID"); //이게 채팅방 이름
->>>>>>> cedc50979ff1be96b59e1f8818bbdfe57b86d4c7
         USER_NAME = intent.getStringExtra("userName");
         CHAT_NAME = intent.getStringExtra("chatName");//채팅방 KEY (디비에서 저장되있는 형식)
 

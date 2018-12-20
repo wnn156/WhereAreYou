@@ -394,15 +394,12 @@ public final class R {
      */
     public static final int alphabeticModifiers=0x7f030028;
     /**
-<<<<<<< HEAD
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
     public static final int ambientEnabled=0x7f030029;
     /**
-=======
      * The length of the arrow head when formed to make an arrow
->>>>>>> cedc50979ff1be96b59e1f8818bbdfe57b86d4c7
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -4522,12 +4519,8 @@ public final class R {
      * sp (scaled pixels based on preferred font size), in (inches), and
      * mm (millimeters).
      */
-<<<<<<< HEAD
-    public static final int titleMargins=0x7f03020f;
-=======
     @Deprecated
-    public static final int titleMargins=0x7f030201;
->>>>>>> cedc50979ff1be96b59e1f8818bbdfe57b86d4c7
+    public static final int titleMargins=0x7f03020f;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
