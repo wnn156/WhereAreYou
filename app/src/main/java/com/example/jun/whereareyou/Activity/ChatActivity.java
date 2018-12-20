@@ -15,7 +15,6 @@ import android.widget.ListView;
 import com.example.jun.whereareyou.Adapter.ChatAdapter;
 import com.example.jun.whereareyou.Data.ChatDTO;
 import com.example.jun.whereareyou.Data.ListViewChatItem;
-import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.Module.UpdateWorker;
 import com.example.jun.whereareyou.R;
 import com.google.firebase.database.ChildEventListener;
@@ -24,7 +23,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
+import net.daum.android.map.MapActivity;
+
 import java.util.concurrent.TimeUnit;
 
 import androidx.work.PeriodicWorkRequest;
@@ -74,6 +74,7 @@ public class ChatActivity extends AppCompatActivity {
         // 로그인 화면에서 받아온 채팅방 이름, 유저 이름 저장
         Intent intent = getIntent();
         listViewChatItem = intent.getParcelableExtra("ListViewChatItem");
+
         CHAT_ID = intent.getStringExtra("chatID"); //이게 채팅방 이름
         USER_NAME = intent.getStringExtra("userName");
         CHAT_NAME = intent.getStringExtra("chatName");//채팅방 KEY (디비에서 저장되있는 형식)
@@ -178,7 +179,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
         if( id == R.id.showMap ){
-            Intent intent = new Intent(ChatActivity.this, MapActivity.class);
+            Intent intent = new Intent(ChatActivity.this, MapsActivity.class);
             startActivity(intent);
             return true;
 
