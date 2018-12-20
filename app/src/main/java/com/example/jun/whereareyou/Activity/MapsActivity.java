@@ -1,11 +1,12 @@
 package com.example.jun.whereareyou.Activity;
 
+import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.example.jun.whereareyou.Data.GpsInfo;
 import com.example.jun.whereareyou.R;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -13,16 +14,18 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private GpsInfo gps;
-
+    private Geocoder geocoder;
+    PlaceAutocompleteFragment autocompleteFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-        Log.i("mapactivitiy","map 넘어옴 ");
+        setContentView(R.layout.activitiy_searchmaps);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -30,6 +33,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         gps = new GpsInfo(this);
 
+        geocoder = new Geocoder(this);
     }
 
 
