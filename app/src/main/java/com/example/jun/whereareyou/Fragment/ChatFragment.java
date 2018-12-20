@@ -87,8 +87,9 @@ public class ChatFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ChatActivity.class);
                 intent.putExtra("ListViewChatItem", data.get(position));
-                intent.putExtra("chatName",data.get(position).getKey() );
-                Log.d("chatName",data.get(position).toString());
+                intent.putExtra("chatID",data.get(position).getKey() );
+                intent.putExtra("chatName",data.get(position).getChat_name());
+                Log.d("chatID",data.get(position).toString());
                 intent.putExtra("userName", me.getEmail());
                 startActivity(intent);
             }

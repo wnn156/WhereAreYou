@@ -3,6 +3,7 @@ package com.example.jun.whereareyou.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +33,9 @@ import androidx.work.WorkManager;
 
 public class ChatActivity extends AppCompatActivity {
 
+
+    Toolbar myToolbar; //액션바 없애서 채팅방에 툴바추가함
+    private String CHAT_ID;
     private String CHAT_NAME;
     private String USER_NAME;
     private ChatAdapter adapter;
@@ -46,6 +50,11 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        //툴바 생성
+/////////////////////////////////////////////////////////////////////////////////
+        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+////////////////////////////////////////////////////////////////////////////////
 
         PeriodicWorkRequest.Builder UpdateBuilder =
                 new PeriodicWorkRequest.Builder(UpdateWorker.class, 20,
@@ -65,13 +74,16 @@ public class ChatActivity extends AppCompatActivity {
         // 로그인 화면에서 받아온 채팅방 이름, 유저 이름 저장
         Intent intent = getIntent();
         listViewChatItem = intent.getParcelableExtra("ListViewChatItem");
-        CHAT_NAME = intent.getStringExtra("chatName");
+        CHAT_ID = intent.getStringExtra("chatID"); //준영이 이거 chatname에서 chat id로 변경함 name이름 쓸라고
         USER_NAME = intent.getStringExtra("userName");
+        CHAT_NAME = intent.getStringExtra("chatName");
+
+        getSupportActionBar().setTitle(CHAT_NAME);//툴바명을 채팅방이름으로 변경
 
         adapter = new ChatAdapter(this, R.layout.listitem_chat,listViewChatItem.getUsers());
         chat_view.setAdapter(adapter);
         // 채팅 방 입장
-        openChat(CHAT_NAME);
+        openChat(CHAT_ID);
 
         // 메시지 전송 버튼에 대한 클릭 리스너 지정
         chat_send.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +94,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 ChatDTO chat = new ChatDTO(USER_NAME, chat_edit.getText().toString()); //ChatDTO를 이용하여 데이터를 묶는다.
                 chat.setTime(System.currentTimeMillis());
-                databaseReference.child("CHAT").child(CHAT_NAME).push().setValue(chat); // 데이터 푸쉬
+                databaseReference.child("CHAT").child(CHAT_ID).push().setValue(chat); // 데이터 푸쉬
                 chat_edit.setText(""); //입력창 초기화
 
             }
