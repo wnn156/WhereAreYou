@@ -47,7 +47,7 @@ public class SearchMapActivity extends FragmentActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_maps);
+        setContentView(R.layout.activitiy_searchmaps);
 
         geocoder = new Geocoder(this);
         button = (Button) findViewById(R.id.buttonn);
