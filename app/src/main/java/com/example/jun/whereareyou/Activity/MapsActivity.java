@@ -128,17 +128,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-<<<<<<< HEAD
+
         final LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
-=======
-<<<<<<< HEAD
+
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(gps.getLatitude(), gps.getLongitude());
         mMap.addMarker(new MarkerOptions().position(sydney).title("My location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-=======
-        LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
->>>>>>> f8ba320f9b562d0cdb412a7d02db518b386eb6d1
+
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
         mMap.moveCamera(cameraUpdate);
 
@@ -170,7 +167,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return false;
             }
         });
->>>>>>> 49caf94159098200501ddac426e180e7feb74f66
     }
 
 

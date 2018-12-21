@@ -131,7 +131,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fab1:
                 anim();
-                Prom_Dialog prom_dialog = new Prom_Dialog(this);
+                Intent intent_prom = new Intent(this,AddPromActivity.class);
+                startActivity(intent_prom);
+                /*Prom_Dialog prom_dialog = new Prom_Dialog(this,this);
                 prom_dialog.setDialogListener(new Prom_Dialog.MyDialogListener() {  // MyDialogListener 를 구현
                     @Override
                     public void onPositiveClicked(ListViewChatItem item) {
@@ -143,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d("MyDialogListener","onNegativeClicked");
                     }
                 });
-                prom_dialog.show();
+                prom_dialog.show();*/
                 break;
             case R.id.fab2:
                 anim();
@@ -187,6 +189,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.item = item;
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

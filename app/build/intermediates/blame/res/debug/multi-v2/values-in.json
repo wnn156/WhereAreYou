@@ -13,19 +13,11 @@
                         "endOffsets": "437"
                     },
                     "to": {
-<<<<<<< HEAD
-                        "startLines": "50",
-                        "startColumns": "4",
-                        "startOffsets": "5783",
-                        "endColumns": "100",
-                        "endOffsets": "5879"
-=======
                         "startLines": "37",
                         "startColumns": "4",
                         "startOffsets": "3967",
                         "endColumns": "190",
                         "endOffsets": "4153"
->>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     }
                 },
                 {
@@ -46,28 +38,7 @@
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\values-in\\values.xml",
-                    "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "193,297",
-                        "endColumns": "103,93",
-                        "endOffsets": "296,390"
-                    },
-                    "to": {
-                        "startLines": "47,48",
-                        "startColumns": "4,4",
-                        "startOffsets": "5493,5601",
-                        "endColumns": "107,97",
-                        "endOffsets": "5596,5694"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\45a7af0e91e04c17df28c113aac17216\\res\\values-in\\values.xml",
-=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\386752e6a5a6ab502ef35bb082ecbc71\\res\\values-in\\values.xml",
->>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -93,13 +64,6 @@
                         "endOffsets": "151"
                     },
                     "to": {
-<<<<<<< HEAD
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "3967",
-                        "endColumns": "190",
-                        "endOffsets": "4153"
-=======
                         "startLines": "50",
                         "startColumns": "4",
                         "startOffsets": "5783",
@@ -122,7 +86,6 @@
                         "startOffsets": "5493,5601",
                         "endColumns": "107,97",
                         "endOffsets": "5596,5694"
->>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     }
                 }
             ]

@@ -21,28 +21,7 @@
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\values-hr\\values.xml",
-                    "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "193,302",
-                        "endColumns": "108,95",
-                        "endOffsets": "301,397"
-                    },
-                    "to": {
-                        "startLines": "47,48",
-                        "startColumns": "4,4",
-                        "startOffsets": "5513,5626",
-                        "endColumns": "112,99",
-                        "endOffsets": "5621,5721"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\1a599f58f05614478748087f3ef1026b\\res\\values-hr\\values-hr.xml",
-=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\a3e3fe3bd5295da1606e000f9e031bd7\\res\\values-hr\\values-hr.xml",
->>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -76,9 +55,6 @@
                     }
                 },
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\45a7af0e91e04c17df28c113aac17216\\res\\values-hr\\values.xml",
-=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\671cb7d736ef4a6304ff38c65d90a01f\\res\\values-hr\\values.xml",
                     "from": {
                         "startLines": "4,5",
@@ -97,7 +73,6 @@
                 },
                 {
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\386752e6a5a6ab502ef35bb082ecbc71\\res\\values-hr\\values.xml",
->>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
