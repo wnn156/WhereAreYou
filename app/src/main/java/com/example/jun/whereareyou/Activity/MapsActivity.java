@@ -88,7 +88,11 @@ public class MapsActivity extends FragmentActivity implements
                 // 좌표(위도, 경도) 생성
 
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                MarkerOptions markerOptions = new MarkerOptions();
+                markerOptions.position(point).title("여기요?");
+                markerOptions.snippet(latitude.toString() + ", " + longitude.toString());
 
+                mMap.addMarker(markerOptions);
                 // 해당 좌표로 화면 줌
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 16));
             }
@@ -125,6 +129,7 @@ public class MapsActivity extends FragmentActivity implements
 
         mMap = googleMap;
 
+<<<<<<< HEAD
         LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
         mMap.moveCamera(cameraUpdate);
@@ -133,6 +138,27 @@ public class MapsActivity extends FragmentActivity implements
         .add(
                 DEFAULT_LOCATION,
                 new LatLng(DEFAULT_LOCATION.latitude + 0.01, DEFAULT_LOCATION.longitude + 0.01)));
+=======
+
+        final LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
+
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(gps.getLatitude(), gps.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(sydney).title("My location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
+        mMap.moveCamera(cameraUpdate);
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng point) {
+                MarkerOptions markerOptions = new MarkerOptions();
+                markerOptions.position(point).title("여기요?");
+                Double latitude = point.latitude;
+                Double longitude = point.longitude;
+                markerOptions.snippet(latitude.toString() + ", " + longitude.toString());
+>>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
 
         Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
                 .add(
@@ -143,6 +169,25 @@ public class MapsActivity extends FragmentActivity implements
                         DEFAULT_LOCATION,
                         new LatLng(DEFAULT_LOCATION.latitude - 0.025, DEFAULT_LOCATION.longitude - 0.033)));
 
+<<<<<<< HEAD
+=======
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                LatLng latLng = marker.getPosition();
+                Intent intent = new Intent();
+                if(str != null) {
+                    intent.putExtra("str", str);
+                    Log.d("signupstr", str);
+                }
+                intent.putExtra("Latlng",latLng);
+                setResult(RESULT_OK, intent);
+                finish();
+                return false;
+            }
+        });
+    }
+>>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
 
 
     }

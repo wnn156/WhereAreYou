@@ -1365,6 +1365,7 @@ id list_item
 id login
 id main_content
 id map
+id map_info
 id masked
 id media_actions
 id message
@@ -1516,7 +1517,6 @@ id txt_time
 id uniform
 id unlabeled
 id up
-id update_btn
 id useLogo
 id userName
 id user_id
@@ -1577,6 +1577,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activitiy_searchmaps
+layout activity_add_prom
 layout activity_chat
 layout activity_login
 layout activity_main

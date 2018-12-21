@@ -1,7 +1,9 @@
 package com.example.jun.whereareyou.Dialog;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -11,8 +13,11 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.jun.whereareyou.Activity.SearchMapActivity;
 import com.example.jun.whereareyou.Data.ListViewChatItem;
 import com.example.jun.whereareyou.R;
+
+import static android.support.v4.app.ActivityCompat.startActivityForResult;
 
 public class Prom_Dialog extends Dialog implements View.OnClickListener{
     private static final int LAYOUT = R.layout.prom_dialog;
@@ -32,19 +37,21 @@ public class Prom_Dialog extends Dialog implements View.OnClickListener{
     private TextView cancelTv;
     private TextView searchTv;
     private Button placeBtn;
+    private int REQUEST_CODE_P = 1;
     //private Button addFriendsBtn;
 
     private String name;
+    private Activity activity;
 
     public Prom_Dialog(@NonNull Context context) {
         super(context);
         this.context = context;
     }
 
-    public Prom_Dialog(Context context,String name){
+    public Prom_Dialog(Context context,Activity activity){
         super(context);
         this.context = context;
-        this.name = name;
+        this.activity = activity;
     }
 
     @Override
@@ -71,10 +78,13 @@ public class Prom_Dialog extends Dialog implements View.OnClickListener{
         placeBtn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
-                //나중에 여기로
+                Intent intent_p = new Intent(activity, SearchMapActivity.class);
+                activity.startActivityForResult(intent_p,REQUEST_CODE_P);
+
             }
         });
     }
+
 
     @Override
     public void onClick(View v) {

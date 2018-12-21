@@ -43,10 +43,11 @@
         android:layout_weight="9.5"
         tools:context=".Activity.SearchMapActivity" />
 
-    <Button
-        android:id="@+id/update_btn"
+    <TextView
+        android:id="@+id/map_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_weight="0.5"
-        android:text="Button" />
+        android:text="TextView" />
+
 </LinearLayout>

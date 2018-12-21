@@ -4,7 +4,28 @@
             "outputFile": "C:\\Android\\WhereAreYou\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ro\\values-ro.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\values-ro\\values.xml",
+=======
+                    "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\a3e3fe3bd5295da1606e000f9e031bd7\\res\\values-ro\\values-ro.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "5907",
+                        "endColumns": "100",
+                        "endOffsets": "6003"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\671cb7d736ef4a6304ff38c65d90a01f\\res\\values-ro\\values.xml",
+>>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",
@@ -18,6 +39,7 @@
                         "startOffsets": "5619,5727",
                         "endColumns": "107,96",
                         "endOffsets": "5722,5819"
+<<<<<<< HEAD
                     }
                 },
                 {
@@ -35,6 +57,8 @@
                         "startOffsets": "4048",
                         "endColumns": "203",
                         "endOffsets": "4247"
+=======
+>>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
                     }
                 },
                 {
@@ -81,11 +105,19 @@
                         "endOffsets": "151"
                     },
                     "to": {
+<<<<<<< HEAD
                         "startLines": "50",
                         "startColumns": "4",
                         "startOffsets": "5907",
                         "endColumns": "100",
                         "endOffsets": "6003"
+=======
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4048",
+                        "endColumns": "203",
+                        "endOffsets": "4247"
+>>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
                     }
                 }
             ]

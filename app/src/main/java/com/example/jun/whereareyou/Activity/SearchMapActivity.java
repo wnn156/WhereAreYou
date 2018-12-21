@@ -32,6 +32,7 @@ import java.util.List;
 public class SearchMapActivity extends FragmentActivity implements
         GoogleMap.OnMyLocationButtonClickListener,
         OnMapReadyCallback,
+        GoogleMap.OnInfoWindowClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -42,7 +43,8 @@ public class SearchMapActivity extends FragmentActivity implements
     private boolean mPermissionDenied = false;
     String str;
     private GpsInfo gps;
-
+    //MarkerOptions markerOptions;
+    Marker marker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,14 +85,26 @@ public class SearchMapActivity extends FragmentActivity implements
                 System.out.println(latitude);
                 System.out.println(longitude);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
                 // 좌표(위도, 경도) 생성
 
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                marker = mMap.addMarker(new MarkerOptions().position(point).title(address).snippet(latitude.toString() + ", " + longitude.toString()));
+                marker.showInfoWindow();
+
 
                 // 해당 좌표로 화면 줌
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 16));
+
+
             }
         });
+
+
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         autocompleteFragment = (PlaceAutocompleteFragment)
@@ -114,6 +128,10 @@ public class SearchMapActivity extends FragmentActivity implements
     }
 
     @Override
+    public void onInfoWindowClick(Marker marker) {
+        System.out.println("!!!!");
+    }
+    @Override
     public boolean onMyLocationButtonClick() {
         return false;
     }
@@ -122,10 +140,17 @@ public class SearchMapActivity extends FragmentActivity implements
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
+        Double latitude = gps.getLatitude();
+        Double longitude = gps.getLongitude();
 
-        LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
+        LatLng point = new LatLng(latitude, longitude);
+        /*markerOptions = new MarkerOptions();
+        markerOptions.position(point).title("현재위치");
+
+        markerOptions.snippet(latitude.toString() + ", " + longitude.toString());*/
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(point, 16);
         mMap.moveCamera(cameraUpdate);
+        //mMap.addMarker(markerOptions);
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
@@ -136,7 +161,17 @@ public class SearchMapActivity extends FragmentActivity implements
                 mMap.addMarker(markerOptions);
             }
         });
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                Intent place_data = new Intent(getApplicationContext(),MainActivity.class);
+                place_data.putExtra("PLACE",marker.getTitle());
+                place_data.putExtra("X_POS",marker.getPosition().latitude);
+                place_data.putExtra("Y_POS",marker.getPosition().longitude);
 
+                setResult(RESULT_OK,place_data);
+                finish();
+            } });
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
