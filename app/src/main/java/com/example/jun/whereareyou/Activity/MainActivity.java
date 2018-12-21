@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fab2:
                 anim();
                 //여기 서 인텐트.
-                AddFriends_Dialog addFriends_dialog = new AddFriends_Dialog(this);
+                AddFriends_Dialog addFriends_dialog = new AddFriends_Dialog(this, me);
                 addFriends_dialog.setDialogListener(new AddFriends_Dialog.MyDialogListener() {
                     @Override
                     public void onPositiveClicked(User user) {

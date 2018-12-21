@@ -1496,7 +1496,6 @@ id textView3
 id textView5
 id text_input_password_toggle
 id text_name
-id text_user_info
 id textinput_counter
 id textinput_error
 id textinput_helper_text

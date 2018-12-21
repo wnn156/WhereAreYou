@@ -26,17 +26,10 @@ public class UpdateWorker extends Worker {
     @Override
     public Result doWork() {
 
-        // Do the work here--in this case, compress the stored images.
-        // In this example no parameters are passed; the task is
-        // assumed to be "compress the whole library."
         myCompress();
         sleep(500);
 
-        // Indicate success or failure with your return value:
         return Result.success();
-
-        // (Returning Result.retry() tells WorkManager to try this task again
-        // later; Result.failure() says not to try again.)
     }
 
     public void myCompress(){
