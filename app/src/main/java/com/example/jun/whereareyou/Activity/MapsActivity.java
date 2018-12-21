@@ -85,7 +85,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 System.out.println(longitude);
 
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+                MarkerOptions markerOptions = new MarkerOptions();
+                markerOptions.position(point).title("여기요?");
+                markerOptions.snippet(latitude.toString() + ", " + longitude.toString());
 
+                mMap.addMarker(markerOptions);
                 // 해당 좌표로 화면 줌
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 16));
             }
@@ -124,15 +128,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
+        final LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
         mMap.moveCamera(cameraUpdate);
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
-            public void onMapClick(LatLng latLng) {
+            public void onMapClick(LatLng point) {
                 MarkerOptions markerOptions = new MarkerOptions();
-                markerOptions.position(latLng).title("여기요?");
+                markerOptions.position(point).title("여기요?");
+                Double latitude = point.latitude;
+                Double longitude = point.longitude;
+                markerOptions.snippet(latitude.toString() + ", " + longitude.toString());
 
                 mMap.addMarker(markerOptions);
             }

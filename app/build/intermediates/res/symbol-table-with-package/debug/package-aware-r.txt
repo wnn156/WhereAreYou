@@ -1365,6 +1365,7 @@ id list_item
 id login
 id main_content
 id map
+id map_info
 id masked
 id media_actions
 id message
@@ -1515,7 +1516,6 @@ id txt_time
 id uniform
 id unlabeled
 id up
-id update_btn
 id useLogo
 id userName
 id user_id
