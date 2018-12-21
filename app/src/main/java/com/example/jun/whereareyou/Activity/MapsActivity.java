@@ -3,8 +3,9 @@ package com.example.jun.whereareyou.Activity;
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,33 +25,33 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.io.IOException;
 import java.util.List;
 
+public class MapsActivity extends FragmentActivity implements
+        GoogleMap.OnMyLocationButtonClickListener,
+        OnMapReadyCallback,
+        ActivityCompat.OnRequestPermissionsResultCallback {
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap mMap;
-    private GpsInfo gps;
     private Geocoder geocoder;
     private Button button;
-    String str;
     PlaceAutocompleteFragment autocompleteFragment;
+    private boolean mPermissionDenied = false;
+    String str;
+    private GpsInfo gps;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_searchmaps);
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        setContentView(R.layout.activity_maps);
 
         gps = new GpsInfo(this);
-
-        geocoder = new Geocoder(this);
-
         geocoder = new Geocoder(this);
         button = (Button) findViewById(R.id.buttonn);
 
@@ -59,7 +60,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         button.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Toast.makeText(getApplicationContext(), "search Btn clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "search Btn clicked", Toast.LENGTH_SHORT).show();
                 List<Address> addressList = null;
                 try {
                     // editText에 입력한 텍스트(주소, 지역, 장소 등)을 지오 코딩을 이용해 변환
@@ -84,6 +85,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 System.out.println(latitude);
                 System.out.println(longitude);
 
+                // 좌표(위도, 경도) 생성
+
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
                 MarkerOptions markerOptions = new MarkerOptions();
                 markerOptions.position(point).title("여기요?");
@@ -94,7 +97,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 16));
             }
         });
-
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
         autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
@@ -112,62 +116,34 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
         mapFragment.getMapAsync(this);
+
     }
 
+    @Override
+    public boolean onMyLocationButtonClick() {
+        return false;
+    }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
 
-
-        final LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
-
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(gps.getLatitude(), gps.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(sydney).title("My location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-
+        LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
         mMap.moveCamera(cameraUpdate);
 
-        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-            @Override
-            public void onMapClick(LatLng point) {
-                MarkerOptions markerOptions = new MarkerOptions();
-                markerOptions.position(point).title("여기요?");
-                Double latitude = point.latitude;
-                Double longitude = point.longitude;
-                markerOptions.snippet(latitude.toString() + ", " + longitude.toString());
-
-                mMap.addMarker(markerOptions);
-            }
-        });
-
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                LatLng latLng = marker.getPosition();
-                Intent intent = new Intent();
-                if(str != null) {
-                    intent.putExtra("str", str);
-                    Log.d("signupstr", str);
-                }
-                intent.putExtra("Latlng",latLng);
-                setResult(RESULT_OK, intent);
-                finish();
-                return false;
-            }
-        });
+        Polyline polyline = mMap.addPolyline(new PolylineOptions()
+                .add(
+                        DEFAULT_LOCATION,
+                        new LatLng(DEFAULT_LOCATION.latitude + 0.01, DEFAULT_LOCATION.longitude + 0.01)));
+        Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
+                .add(
+                        DEFAULT_LOCATION,
+                        new LatLng(DEFAULT_LOCATION.latitude + 0.02, DEFAULT_LOCATION.longitude + 0.05)));
+        Polyline polyline2 = mMap.addPolyline(new PolylineOptions()
+                .add(
+                        DEFAULT_LOCATION,
+                        new LatLng(DEFAULT_LOCATION.latitude - 0.025, DEFAULT_LOCATION.longitude - 0.033)));
     }
-
-
 }

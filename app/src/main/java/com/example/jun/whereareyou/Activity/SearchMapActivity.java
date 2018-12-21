@@ -34,6 +34,7 @@ public class SearchMapActivity extends FragmentActivity implements
         OnMapReadyCallback,
         GoogleMap.OnInfoWindowClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback {
+
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap mMap;
     private Geocoder geocoder;
@@ -44,8 +45,6 @@ public class SearchMapActivity extends FragmentActivity implements
     private GpsInfo gps;
     //MarkerOptions markerOptions;
     Marker marker;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +84,6 @@ public class SearchMapActivity extends FragmentActivity implements
                 String longitude = splitStr[12].substring(splitStr[12].indexOf("=") + 1); // 경도
                 System.out.println(latitude);
                 System.out.println(longitude);
-
 
                 // 좌표(위도, 경도) 생성
 
@@ -174,7 +172,6 @@ public class SearchMapActivity extends FragmentActivity implements
             @Override
             public boolean onMarkerClick(Marker marker) {
                 LatLng latLng = marker.getPosition();
-
 
 
                 return false;

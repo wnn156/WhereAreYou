@@ -1423,6 +1423,7 @@ id promdia_place_text
 id promdia_timepicker
 id promdia_title_edit
 id radio
+id requestDialogTextView
 id requestListView
 id requestTextView
 id right
@@ -1581,6 +1582,7 @@ layout activity_add_prom
 layout activity_chat
 layout activity_login
 layout activity_main
+layout activity_maps
 layout activity_prom_friends
 layout activity_regist
 layout activity_splash_screen

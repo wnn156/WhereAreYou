@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="70dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
     android:orientation="horizontal">
 
     <ImageView
@@ -18,7 +20,7 @@
         <TextView
             android:id="@+id/user_id"
             android:text="말해?모앱!"
-            android:textSize="15dp"
+            android:textSize="20sp"
             android:layout_gravity="top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -26,7 +28,7 @@
             android:id="@+id/credit_rate"
             android:layout_gravity="center"
             android:text="공대9호관 실습실A"
-            android:textSize="10dp"
+            android:textSize="13dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

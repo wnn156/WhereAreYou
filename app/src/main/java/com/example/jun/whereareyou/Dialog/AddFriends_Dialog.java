@@ -9,13 +9,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.jun.whereareyou.Data.ListViewChatItem;
+import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 
 public class AddFriends_Dialog extends Dialog implements View.OnClickListener{
     private static final int LAYOUT = R.layout.addfriends_dialog;
 
     public interface MyDialogListener {
-        public void onPositiveClicked(ListViewChatItem item);
+        public void onPositiveClicked(User user);
         public void onNegativeClicked();
     }
     private MyDialogListener dialogListener;
@@ -27,6 +28,7 @@ public class AddFriends_Dialog extends Dialog implements View.OnClickListener{
     private TextView cancelTv;
     private TextView searchTv;
 
+    private User user;
     private String userID;
 
     public AddFriends_Dialog(@NonNull Context context) {
@@ -66,6 +68,24 @@ public class AddFriends_Dialog extends Dialog implements View.OnClickListener{
                 break;
             case R.id.findPwDialogFindTv:
                //user_id로 검색후 user_id와 일치하는 유저 닉네임 등등 반환.
+                user = new User();
+                user.setEmail(textview_user_ID.getText().toString());
+                user.setName("안준");
+
+                Request_Dialog request_dialog = new Request_Dialog(getContext(), user);
+                request_dialog.setDialogListener(new Request_Dialog.MyDialogListener() {
+                    @Override
+                    public void onPositiveClicked() {
+                        dialogListener.onPositiveClicked(user);
+                        dismiss();
+                    }
+
+                    @Override
+                    public void onNegativeClicked() {
+
+                    }
+                });
+                request_dialog.show();
                 break;
         }
     }
