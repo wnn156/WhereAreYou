@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.jun.whereareyou.Activity.ChatActivity;
 import com.example.jun.whereareyou.Adapter.ChatlistAdapter;
@@ -37,6 +38,7 @@ public class ChatFragment extends Fragment {
 
     private static User me = null;
     private ListView listView;
+    private TextView requestTextView;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
@@ -66,6 +68,7 @@ public class ChatFragment extends Fragment {
 
         final ListView requestListView = view.findViewById(R.id.requestListView);
 
+        requestTextView = view.findViewById(R.id.requestTextView);
         listView = (ListView)view.findViewById(R.id.listView);
         data=new ArrayList<>();
 
@@ -91,9 +94,14 @@ public class ChatFragment extends Fragment {
         adapter=new ChatlistAdapter(getActivity(),R.layout.chatlist_item,data);
 
 
-        dataRequest = data;
+        dataRequest = new ArrayList<>();
+        dataRequest.addAll(data);
 
         requestAdapter=new ChatlistAdapter(getActivity(),R.layout.chatlist_item,dataRequest);
+        if(dataRequest.size() >0)
+            requestTextView.setVisibility(View.VISIBLE);
+        else
+            requestTextView.setVisibility(View.GONE);
         requestListView.setAdapter(requestAdapter);
         requestListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -113,6 +121,10 @@ public class ChatFragment extends Fragment {
                         Log.d("Data", data.toString());
                         Log.d("dataRequest",dataRequest.toString());
 
+                        if(dataRequest.size() >0)
+                            requestTextView.setVisibility(View.VISIBLE);
+                        else
+                            requestTextView.setVisibility(View.GONE);
 
                     }
 
