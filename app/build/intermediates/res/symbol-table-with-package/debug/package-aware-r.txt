@@ -1069,6 +1069,7 @@ drawable android_construction
 drawable avd_hide_password
 drawable avd_show_password
 drawable book_list_back
+drawable brown
 drawable buddy1
 drawable buddy_background
 drawable buddy_list
@@ -1206,13 +1207,17 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable places_ic_clear
 drawable places_ic_search
+drawable plus
 drawable post
 drawable postclicked
 drawable powered_by_google_dark
 drawable powered_by_google_light
+drawable profile
+drawable prom
 drawable request
 drawable review_item_back
 drawable review_top
+drawable round_backgournd
 drawable selecter_like
 drawable signin_buddy_button
 drawable signin_customer_button
