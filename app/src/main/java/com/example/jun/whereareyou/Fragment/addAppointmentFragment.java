@@ -20,8 +20,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.jun.whereareyou.Activity.PromFriendsActivity;
-import com.example.jun.whereareyou.Adapter.FriendsListAdapter;
-import com.example.jun.whereareyou.Data.FriendProfile;
+import com.example.jun.whereareyou.Adapter.FriendListAdapter;
+import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class addAppointmentFragment extends Fragment {
     String timeStr = "";
     TextView dateTextView;
     final static int RES_CODE = 1000;
-    ArrayList<FriendProfile> friendsArrayList = new ArrayList<FriendProfile>();
+    ArrayList<User> friendsArrayList = new ArrayList<User>();
 
     public addAppointmentFragment() {
         // Required empty public constructor
@@ -80,7 +80,7 @@ public class addAppointmentFragment extends Fragment {
     }
 
     public void setListView() {
-        final FriendsListAdapter friendsListAdapter = new FriendsListAdapter(getActivity(), friendsArrayList);
+        final FriendListAdapter friendsListAdapter = new FriendListAdapter(getContext(),R.layout.activity_prom_friends, friendsArrayList);
         friendListView.setAdapter(friendsListAdapter);
     }
 

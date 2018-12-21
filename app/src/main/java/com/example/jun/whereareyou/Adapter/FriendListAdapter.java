@@ -30,12 +30,17 @@ public class FriendListAdapter extends BaseAdapter{
     public long getItemId(int position){return position;}
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
+
+        System.out.println(data);
+        
         if(convertView==null){
             convertView=inflater.inflate(layout,parent,false);
         }
         User user=data.get(position);
         TextView user_id=(TextView) convertView.findViewById(R.id.user_id);
         user_id.setText(user.getName());
+        TextView phone_number = (TextView) convertView.findViewById(R.id.phone_num);
+        phone_number.setText(user.getPhone_number());
         TextView credit_rate=(TextView)convertView.findViewById(R.id.credit_rate);
         credit_rate.setText(Double.toString(user.getScore()));
 

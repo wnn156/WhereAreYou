@@ -1332,8 +1332,6 @@ id findPwDialogCancelTv
 id findPwDialogFindTv
 id fixed
 id forever
-id friendImageView
-id friendTextView
 id ghost_view
 id gone
 id group_divider
@@ -1610,7 +1608,6 @@ layout fragment_add_appointment
 layout fragment_chat
 layout fragment_friends
 layout fragment_set
-layout freinds_item
 layout friendlist_item
 layout listitem_chat
 layout listitem_chat_my

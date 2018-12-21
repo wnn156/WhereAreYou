@@ -19,7 +19,7 @@
         android:orientation="vertical">
         <TextView
             android:id="@+id/user_id"
-            android:text="말해?모앱!"
+            android:text="김동욱"
             android:textSize="20sp"
             android:layout_gravity="top"
             android:layout_width="match_parent"
@@ -27,10 +27,16 @@
         <TextView
             android:id="@+id/credit_rate"
             android:layout_gravity="center"
-            android:text="공대9호관 실습실A"
+            android:text="1등급"
             android:textSize="13dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/phone_num"
+            android:text="010-0000-0000"
+            android:textSize="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>

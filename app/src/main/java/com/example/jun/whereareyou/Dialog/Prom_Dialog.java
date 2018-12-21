@@ -88,19 +88,7 @@ public class Prom_Dialog extends Dialog implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.findPwDialogCancelTv:
-                cancel();
-                break;
-            case R.id.findPwDialogFindTv:
-                String time = "" + datePicker.getYear() + "/" + datePicker.getMonth() + "/'" +
-                        datePicker.getDayOfMonth() + " " + timePicker.getHour() + ":" +
-                        timePicker.getMinute();
-                ListViewChatItem item = new ListViewChatItem(nameEt.getText().toString(), place.getText().toString(),time);
-                dialogListener.onPositiveClicked(item);
-                dismiss();
-                break;
-        }
+
     }
     public void setDialogListener(MyDialogListener dialogListener){
         this.dialogListener = dialogListener;

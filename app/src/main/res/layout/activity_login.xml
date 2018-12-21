@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Email"
+        android:text="floidea"
         android:inputType="textEmailAddress" />
 
         <EditText
@@ -33,6 +34,7 @@
             android:layout_marginTop="33dp"
             android:ems="10"
             android:hint="Password"
+            android:text="11111111"
             android:inputType="textPassword" />
 
     <LinearLayout
