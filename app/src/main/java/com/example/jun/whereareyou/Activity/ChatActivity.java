@@ -179,7 +179,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
         if( id == R.id.showMap ){
-            Intent intent = new Intent(ChatActivity.this, SearchMapActivity.class);
+            Intent intent = new Intent(ChatActivity.this, MapsActivity.class);
             startActivity(intent);
             return true;
 

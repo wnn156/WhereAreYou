@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isAccessCoarseLocation = false;
     private boolean isPermission = false;
     private User me;
+    private User user;
     // GPSTracker class
     private static GpsInfo gps;
     @Override
@@ -151,8 +152,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 AddFriends_Dialog addFriends_dialog = new AddFriends_Dialog(this);
                 addFriends_dialog.setDialogListener(new AddFriends_Dialog.MyDialogListener() {
                     @Override
-                    public void onPositiveClicked(ListViewChatItem item) {
-                        setResult(item);
+                    public void onPositiveClicked(User user) {
+                        setResult(user);
                     }
 
                     @Override
@@ -186,7 +187,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setResult(ListViewChatItem item){
         this.item = item;
     }
-
+    private void setResult(User user){
+        this.user = user;
+    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

@@ -6,8 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.ChatActivity" />
-        <activity android:name=".Activity.LoginActivity"></activity>
+        <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegistActivity" />
         <activity android:name=".Activity.PromFriendsActivity" />
         <activity android:name=".Activity.SplashScreen">
@@ -39,10 +37,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".Activity.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".Activity.SearchMapActivity"></activity>
+        <activity android:name=".Activity.SearchMapActivity" />
+        <activity android:name=".Activity.MapsActivity"></activity>
     </application>
 
 </manifest>
