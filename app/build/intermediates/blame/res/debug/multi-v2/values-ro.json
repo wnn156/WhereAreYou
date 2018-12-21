@@ -4,6 +4,9 @@
             "outputFile": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ro\\values-ro.xml",
             "map": [
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\values-ro\\values.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\a3e3fe3bd5295da1606e000f9e031bd7\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2",
@@ -22,6 +25,7 @@
                 },
                 {
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\671cb7d736ef4a6304ff38c65d90a01f\\res\\values-ro\\values.xml",
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",
@@ -35,6 +39,26 @@
                         "startOffsets": "5619,5727",
                         "endColumns": "107,96",
                         "endOffsets": "5722,5819"
+<<<<<<< HEAD
+                    }
+                },
+                {
+                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\4f93106c70017bd3713829d1ad63a2c6\\res\\values-ro\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "203",
+                        "endOffsets": "450"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4048",
+                        "endColumns": "203",
+                        "endOffsets": "4247"
+=======
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     }
                 },
                 {
@@ -81,11 +105,19 @@
                         "endOffsets": "450"
                     },
                     "to": {
+<<<<<<< HEAD
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "5907",
+                        "endColumns": "100",
+                        "endOffsets": "6003"
+=======
                         "startLines": "37",
                         "startColumns": "4",
                         "startOffsets": "4048",
                         "endColumns": "203",
                         "endOffsets": "4247"
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     }
                 }
             ]

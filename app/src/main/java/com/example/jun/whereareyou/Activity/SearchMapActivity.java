@@ -50,6 +50,7 @@ public class SearchMapActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitiy_searchmaps);
 
+        gps = new GpsInfo(this);
         geocoder = new Geocoder(this);
         button = (Button) findViewById(R.id.buttonn);
 
@@ -83,6 +84,10 @@ public class SearchMapActivity extends FragmentActivity implements
                 System.out.println(latitude);
                 System.out.println(longitude);
 
+<<<<<<< HEAD
+                // 좌표(위도, 경도) 생성
+=======
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
                 // 해당 좌표로 화면 줌
@@ -129,7 +134,7 @@ public class SearchMapActivity extends FragmentActivity implements
             @Override
             public void onMapClick(LatLng latLng) {
                 MarkerOptions markerOptions = new MarkerOptions();
-                markerOptions.position(latLng).title("여기요?");
+                markerOptions.position(latLng).title("");
 
                 mMap.addMarker(markerOptions);
             }
@@ -139,14 +144,9 @@ public class SearchMapActivity extends FragmentActivity implements
             @Override
             public boolean onMarkerClick(Marker marker) {
                 LatLng latLng = marker.getPosition();
-                Intent intent = new Intent();
-                if(str != null) {
-                    intent.putExtra("str", str);
-                    Log.d("signupstr", str);
-                }
-                intent.putExtra("Latlng",latLng);
-                setResult(RESULT_OK, intent);
-                finish();
+
+
+
                 return false;
             }
         });

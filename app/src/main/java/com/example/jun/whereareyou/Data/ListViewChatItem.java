@@ -93,4 +93,15 @@ public class ListViewChatItem implements Parcelable {
         dest.writeString(key);
         dest.writeList(users);
     }
+
+    @Override
+    public String toString() {
+        return "ListViewChatItem{" +
+                "chat_name='" + chat_name + '\'' +
+                ", place='" + place + '\'' +
+                ", time='" + time + '\'' +
+                ", key='" + key + '\'' +
+                ", users=" + users +
+                '}';
+    }
 }

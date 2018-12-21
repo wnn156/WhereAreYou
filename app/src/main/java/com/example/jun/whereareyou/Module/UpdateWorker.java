@@ -13,6 +13,8 @@ import javax.xml.transform.Result;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import static android.os.SystemClock.sleep;
+
 public class UpdateWorker extends Worker {
 
     public UpdateWorker(
@@ -28,6 +30,7 @@ public class UpdateWorker extends Worker {
         // In this example no parameters are passed; the task is
         // assumed to be "compress the whole library."
         myCompress();
+        sleep(500);
 
         // Indicate success or failure with your return value:
         return Result.success();

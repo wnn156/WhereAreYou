@@ -13,11 +13,19 @@
                         "endOffsets": "151"
                     },
                     "to": {
+<<<<<<< HEAD
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4045",
+                        "endColumns": "187",
+                        "endOffsets": "4228"
+=======
                         "startLines": "50",
                         "startColumns": "4",
                         "startOffsets": "5945",
                         "endColumns": "100",
                         "endOffsets": "6041"
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     }
                 },
                 {
@@ -64,15 +72,23 @@
                         "endOffsets": "434"
                     },
                     "to": {
+<<<<<<< HEAD
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "5945",
+                        "endColumns": "100",
+                        "endOffsets": "6041"
+=======
                         "startLines": "37",
                         "startColumns": "4",
                         "startOffsets": "4045",
                         "endColumns": "187",
                         "endOffsets": "4228"
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     }
                 },
                 {
-                    "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\671cb7d736ef4a6304ff38c65d90a01f\\res\\values-sq\\values.xml",
+                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\values-sq\\values.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",

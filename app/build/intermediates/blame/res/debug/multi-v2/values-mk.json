@@ -4,7 +4,28 @@
             "outputFile": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mk\\values-mk.xml",
             "map": [
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\4f93106c70017bd3713829d1ad63a2c6\\res\\values-mk\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "195",
+                        "endOffsets": "442"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4038",
+                        "endColumns": "195",
+                        "endOffsets": "4229"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\values-mk\\values.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\671cb7d736ef4a6304ff38c65d90a01f\\res\\values-mk\\values.xml",
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",
@@ -21,7 +42,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\45a7af0e91e04c17df28c113aac17216\\res\\values-mk\\values.xml",
+=======
                     "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\386752e6a5a6ab502ef35bb082ecbc71\\res\\values-mk\\values.xml",
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
