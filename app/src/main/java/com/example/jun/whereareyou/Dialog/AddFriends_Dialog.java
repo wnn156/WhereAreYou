@@ -28,8 +28,8 @@ public class AddFriends_Dialog extends Dialog implements View.OnClickListener{
     private TextView cancelTv;
     private TextView searchTv;
 
+    private User user;
     private String userID;
-    private int flag = 0;
 
     public AddFriends_Dialog(@NonNull Context context) {
         super(context);
@@ -67,15 +67,17 @@ public class AddFriends_Dialog extends Dialog implements View.OnClickListener{
                 cancel();
                 break;
             case R.id.findPwDialogFindTv:
-                flag = 0;
                //user_id로 검색후 user_id와 일치하는 유저 닉네임 등등 반환.
-                User user = new User();
+                user = new User();
+                user.setEmail(textview_user_ID.getText().toString());
+                user.setName("안준");
 
                 Request_Dialog request_dialog = new Request_Dialog(getContext(), user);
                 request_dialog.setDialogListener(new Request_Dialog.MyDialogListener() {
                     @Override
                     public void onPositiveClicked() {
-                        flag = 1;
+                        dialogListener.onPositiveClicked(user);
+                        dismiss();
                     }
 
                     @Override
@@ -84,13 +86,6 @@ public class AddFriends_Dialog extends Dialog implements View.OnClickListener{
                     }
                 });
                 request_dialog.show();
-                if(flag == 1) {
-                    dialogListener.onPositiveClicked(user);
-                    dismiss();
-                }
-                else{
-
-                }
                 break;
         }
     }

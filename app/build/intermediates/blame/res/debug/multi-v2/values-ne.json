@@ -13,19 +13,11 @@
                         "endOffsets": "469"
                     },
                     "to": {
-<<<<<<< HEAD
                         "startLines": "37",
                         "startColumns": "4",
                         "startOffsets": "4106",
                         "endColumns": "222",
                         "endOffsets": "4324"
-=======
-                        "startLines": "50",
-                        "startColumns": "4",
-                        "startOffsets": "6018",
-                        "endColumns": "100",
-                        "endOffsets": "6114"
->>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
                     }
                 },
                 {
@@ -55,19 +47,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-<<<<<<< HEAD
                         "startLines": "50",
                         "startColumns": "4",
                         "startOffsets": "6018",
                         "endColumns": "100",
                         "endOffsets": "6114"
-=======
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "4106",
-                        "endColumns": "222",
-                        "endOffsets": "4324"
->>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
                     }
                 },
                 {
@@ -88,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\671cb7d736ef4a6304ff38c65d90a01f\\res\\values-ne\\values.xml",
+                    "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-16.0.0.aar\\986c8f4dd84aa69089d2d4649ce17fa8\\res\\values-ne\\values.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",

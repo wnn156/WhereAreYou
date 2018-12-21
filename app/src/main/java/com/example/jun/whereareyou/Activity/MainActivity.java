@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onPositiveClicked(User user) {
                         setResult(user);
+                        FriendsFragment.newInstance(user);
                     }
 
                     @Override
@@ -189,14 +190,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setResult(ListViewChatItem item){
         this.item = item;
     }
-<<<<<<< HEAD
-    private void setResult(User user){
-        this.user = user;
-=======
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
->>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
+    private void setResult(User user) {
+        this.user = user;
+
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

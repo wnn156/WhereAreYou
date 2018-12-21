@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.jun.whereareyou.Data.ListViewChatItem;
 import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 
@@ -40,5 +41,9 @@ public class FriendListAdapter extends BaseAdapter{
 
 
         return convertView;
+    }
+    public void upDateList(ArrayList<User> users){
+        this.data = users;
+        notifyDataSetChanged();
     }
 }

@@ -85,10 +85,6 @@ public class SearchMapActivity extends FragmentActivity implements
                 System.out.println(latitude);
                 System.out.println(longitude);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 959cbac2040285aa1aeb784e98871de0ceaa0794
                 // 좌표(위도, 경도) 생성
 
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));

@@ -20,11 +20,15 @@ import java.util.ArrayList;
  */
 public class FriendsFragment extends Fragment {
 
+    private static ArrayList<User> data;
     private static User me;
+    public static FriendListAdapter adapter;
 
-    public static FriendsFragment newInstance(){
+    public static FriendsFragment newInstance(User newUser){
         Bundle args = new Bundle();
 
+        data.add(newUser);
+        adapter.upDateList(data);
         FriendsFragment fragment = new FriendsFragment();
         args.putParcelable("User",me);
         fragment.setArguments(args);
@@ -45,7 +49,7 @@ public class FriendsFragment extends Fragment {
 
 
         ListView listView = (ListView)view.findViewById(R.id.listView);
-        ArrayList<User> data=new ArrayList<>();
+        data=new ArrayList<>();
 
         User friend1=new User("김동욱",5);
         User friend2=new User("윤서원",3);
@@ -57,7 +61,7 @@ public class FriendsFragment extends Fragment {
         data.add(friend3);
         data.add(friend4);
 
-        FriendListAdapter adapter=new FriendListAdapter(getActivity(),R.layout.friendlist_item,data);
+        adapter=new FriendListAdapter(getActivity(),R.layout.friendlist_item,data);
         listView.setAdapter(adapter);
 
         return view;

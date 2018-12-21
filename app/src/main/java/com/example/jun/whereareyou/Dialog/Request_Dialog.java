@@ -56,7 +56,7 @@ public class Request_Dialog extends Dialog implements View.OnClickListener {
 
         if (user != null) {
             TextView textView = findViewById(R.id.requestDialogTextView);
-            textView.setText(user.toString());
+            textView.setText(user.toString() + " 이 유저가 맞습니까?");
         }
     }
 

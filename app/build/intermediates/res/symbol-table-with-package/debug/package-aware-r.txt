@@ -1423,6 +1423,7 @@ id promdia_place_text
 id promdia_timepicker
 id promdia_title_edit
 id radio
+id requestDialogTextView
 id requestListView
 id requestTextView
 id right
