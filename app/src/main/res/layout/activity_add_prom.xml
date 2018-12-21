@@ -16,6 +16,15 @@
     <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
     <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/prom_friends_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="3dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,34 +61,34 @@
             android:id="@+id/prom_start_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="약속 시작 시간" />
 
         <TextView
             android:id="@+id/prom_start_time_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <DatePicker
+            android:layout_gravity="center"
             android:id="@+id/promdia_datepicker"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:calendarViewShown="false"
             android:datePickerMode="spinner">
 
         </DatePicker>
 
         <TimePicker
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/promdia_timepicker"
             android:timePickerMode="spinner" >
         </TimePicker>
@@ -143,40 +152,8 @@
             android:text="추가" />
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
-        android:weightSum="10">
 
-        <TextView
-            android:id="@+id/findPwDialogCancelTv"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center"
-            android:text="취소"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp"
-            />
-        <TextView
-            android:id="@+id/findPwDialogFindTv"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:text="완료"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp"
-            />
-    </LinearLayout>
+
 
 
 </LinearLayout>

@@ -12,15 +12,19 @@ public class ListViewChatItem implements Parcelable {
     private String key; // 채팅방 이름
     private ArrayList<User> users;
     private int promise_id;
+    private double latitude;
+    private double longitude;
 
     //private ArrayList<User> users;
 
-    public ListViewChatItem(String chat_name, String place, String time, ArrayList<User> users, int promise_id) {
+    public ListViewChatItem(String chat_name, String place, String time, ArrayList<User> users, int promise_id,double latitude,double longitude) {
         this.chat_name = chat_name;
         this.place = place;
         this.time = time;
         this.users = users;
         this.promise_id=promise_id;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     protected ListViewChatItem(Parcel in) {
@@ -30,6 +34,8 @@ public class ListViewChatItem implements Parcelable {
         key = in.readString();
         users = in.readArrayList(User.class.getClassLoader());
         promise_id = in.readInt();
+        latitude = in.readDouble();
+        longitude = in.readDouble();
     }
 
     public static final Creator<ListViewChatItem> CREATOR = new Creator<ListViewChatItem>() {
@@ -50,6 +56,22 @@ public class ListViewChatItem implements Parcelable {
 
     public void setPromise_id(int promise_id) {
         this.promise_id = promise_id;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public ArrayList<User> getUsers() {
@@ -105,6 +127,8 @@ public class ListViewChatItem implements Parcelable {
         dest.writeString(key);
         dest.writeList(users);
         dest.writeInt(promise_id);
+        dest.writeDouble(latitude);
+        dest.writeDouble(longitude);
     }
 
     @Override

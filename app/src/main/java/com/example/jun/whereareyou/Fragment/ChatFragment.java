@@ -27,6 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -34,7 +35,7 @@ import java.util.ArrayList;
  */
 public class ChatFragment extends Fragment {
     private ChatlistAdapter requestAdapter;
-    private ChatlistAdapter adapter;
+    private static ChatlistAdapter adapter;
 
     private static User me = null;
     private ListView listView;
@@ -42,13 +43,17 @@ public class ChatFragment extends Fragment {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
+    private ListViewChatItem listViewChatItem;
     private ArrayList<ListViewChatItem> dataRequest;
-    private ArrayList<ListViewChatItem> data;
+    private static ArrayList<ListViewChatItem> data;
 
-    public static ChatFragment newInstance(){
+    public static ChatFragment newInstance(ListViewChatItem listViewChatItem){
         Bundle args = new Bundle();
 
         ChatFragment fragment = new ChatFragment();
+        data.add(listViewChatItem);
+        adapter.upDateList(data);
+
         args.putParcelable("User",me);
         fragment.setArguments(args);
         return fragment;

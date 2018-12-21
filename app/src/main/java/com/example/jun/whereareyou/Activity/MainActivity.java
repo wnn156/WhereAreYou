@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean isAccessCoarseLocation = false;
     private boolean isPermission = false;
     private User me;
+    private ListViewChatItem listViewChatItem = null;
     private User user;
     // GPSTracker class
     private static GpsInfo gps;
@@ -64,7 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         me = getIntent().getParcelableExtra("USER");
-        Log.d("User Main",me.toString());
+        Log.d("User Main", me.toString());
+
+        listViewChatItem = getIntent().getParcelableExtra("ListViewChatItem");
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -134,7 +137,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 anim();
                 Intent intent_prom = new Intent(this,AddPromActivity.class);
                 intent_prom.putExtra("USER",me);
-                startActivity(intent_prom);
+                if(listViewChatItem != null) {
+                    startActivity(intent_prom);
+                    ChatFragment.newInstance(listViewChatItem);
+                }
                 /*Prom_Dialog prom_dialog = new Prom_Dialog(this,this);
                 prom_dialog.setDialogListener(new Prom_Dialog.MyDialogListener() {  // MyDialogListener 를 구현
                     @Override
