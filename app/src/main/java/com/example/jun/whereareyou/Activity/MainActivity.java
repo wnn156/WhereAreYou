@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fab1:
                 anim();
                 Intent intent_prom = new Intent(this,AddPromActivity.class);
+                intent_prom.putExtra("USER",me);
                 startActivity(intent_prom);
                 /*Prom_Dialog prom_dialog = new Prom_Dialog(this,this);
                 prom_dialog.setDialogListener(new Prom_Dialog.MyDialogListener() {  // MyDialogListener 를 구현

@@ -11,13 +11,16 @@ public class ListViewChatItem implements Parcelable {
     private String time;
     private String key; // 채팅방 이름
     private ArrayList<User> users;
+    private int promise_id;
 
     //private ArrayList<User> users;
 
-    public ListViewChatItem(String chat_name, String place, String time) {
+    public ListViewChatItem(String chat_name, String place, String time, ArrayList<User> users, int promise_id) {
         this.chat_name = chat_name;
         this.place = place;
         this.time = time;
+        this.users = users;
+        this.promise_id=promise_id;
     }
 
     protected ListViewChatItem(Parcel in) {
@@ -26,6 +29,7 @@ public class ListViewChatItem implements Parcelable {
         time = in.readString();
         key = in.readString();
         users = in.readArrayList(User.class.getClassLoader());
+        promise_id = in.readInt();
     }
 
     public static final Creator<ListViewChatItem> CREATOR = new Creator<ListViewChatItem>() {
@@ -39,6 +43,14 @@ public class ListViewChatItem implements Parcelable {
             return new ListViewChatItem[size];
         }
     };
+
+    public int getPromise_id() {
+        return promise_id;
+    }
+
+    public void setPromise_id(int promise_id) {
+        this.promise_id = promise_id;
+    }
 
     public ArrayList<User> getUsers() {
         return users;
@@ -92,6 +104,7 @@ public class ListViewChatItem implements Parcelable {
         dest.writeString(time);
         dest.writeString(key);
         dest.writeList(users);
+        dest.writeInt(promise_id);
     }
 
     @Override

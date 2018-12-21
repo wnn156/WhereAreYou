@@ -108,7 +108,7 @@ public class User implements Parcelable {
         dest.writeString(email);
         dest.writeString(name);
         dest.writeString(phone_number);
-        dest.writeDouble(score);
+        dest.writeInt(score);
         dest.writeInt(count);
     }
 

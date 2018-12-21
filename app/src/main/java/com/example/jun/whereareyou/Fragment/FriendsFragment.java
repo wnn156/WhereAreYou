@@ -160,15 +160,12 @@ public class FriendsFragment extends Fragment {
 
                 for(int i = 0; i < jsonArray.length(); i++) {
                     JSONObject o = jsonArray.getJSONObject(i);
+                    System.out.println(o);
                     data.add(new User(o));
                 }
 
                 adapter=new FriendListAdapter(getActivity(),R.layout.friendlist_item,data);
                 listView.setAdapter(adapter);
-
-
-
-
 
 
             } catch (Exception e) {

@@ -72,15 +72,15 @@ public class ChatFragment extends Fragment {
         listView = (ListView)view.findViewById(R.id.listView);
         data=new ArrayList<>();
 
-        ListViewChatItem chat1=new ListViewChatItem("말해모앱","공대9호관","2018/12/03 18:30");
+        /*ListViewChatItem chat1=new ListViewChatItem("말해모앱","공대9호관","2018/12/03 18:30");
         ListViewChatItem chat2=new ListViewChatItem("디비조모임","융복관","2018/12/04 15:30");
-        ListViewChatItem chat3=new ListViewChatItem("종프","공대9호관","2018/12/05 19:50");
+        ListViewChatItem chat3=new ListViewChatItem("종프","공대9호관","2018/12/05 19:50");*/
 
         ArrayList<User> users = new ArrayList<>();
        /* users.add(new User("aa"));
         users.add(new User("bb"));
         users.add(new User("cc"));*/
-        chat1.setKey("first");
+       /* chat1.setKey("first");
         chat1.setUsers(users);
         chat2.setKey("first");
         chat2.setUsers(users);
@@ -89,7 +89,7 @@ public class ChatFragment extends Fragment {
 
         data.add(chat1);
         data.add(chat2);
-        data.add(chat3);
+        data.add(chat3);*/
 
         adapter=new ChatlistAdapter(getActivity(),R.layout.chatlist_item,data);
 
