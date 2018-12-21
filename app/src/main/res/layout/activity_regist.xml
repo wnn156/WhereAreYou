@@ -40,6 +40,14 @@
         android:hint="패스워드 확인"
         android:id="@+id/etPasswordConfirm" />
 
+    <EditText
+        android:id="@+id/phone_num"
+        android:hint="전화번호 입력"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center"

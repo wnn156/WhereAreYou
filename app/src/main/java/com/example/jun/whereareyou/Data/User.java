@@ -7,27 +7,27 @@ public class User implements Parcelable {
     private String email;
     private String name;
     private String phone_number;
-    private double score;
+    private int score;
     private int count;
 
+    public User(String email, String name, String phone_number, int score, int count) {
+        this.email = email;
+        this.name = name;
+        this.phone_number = phone_number;
+        this.score = score;
+        this.count = count;
+    }
 
     public User(){
-        email = null;
+
     }
 
-    public User(String email){
-        this.email = email;
-    }
-    public User(String name, double score){
-        this.name = name;
-        this.score = score;
-    }
 
     protected User(Parcel in) {
         email = in.readString();
         name = in.readString();
         phone_number = in.readString();
-        score = in.readDouble();
+        score = in.readInt();
         count = in.readInt();
     }
 
@@ -63,7 +63,7 @@ public class User implements Parcelable {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(int score) {
         this.score = score;
     }
 

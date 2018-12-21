@@ -77,9 +77,9 @@ public class ChatFragment extends Fragment {
         ListViewChatItem chat3=new ListViewChatItem("종프","공대9호관","2018/12/05 19:50");
 
         ArrayList<User> users = new ArrayList<>();
-        users.add(new User("aa"));
+       /* users.add(new User("aa"));
         users.add(new User("bb"));
-        users.add(new User("cc"));
+        users.add(new User("cc"));*/
         chat1.setKey("first");
         chat1.setUsers(users);
         chat2.setKey("first");

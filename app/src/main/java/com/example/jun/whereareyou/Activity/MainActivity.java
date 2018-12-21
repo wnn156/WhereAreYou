@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         me = getIntent().getParcelableExtra("User");
         Log.d("User Main",me.toString());
 

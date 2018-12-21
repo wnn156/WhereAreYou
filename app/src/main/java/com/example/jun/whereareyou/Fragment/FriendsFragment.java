@@ -51,16 +51,6 @@ public class FriendsFragment extends Fragment {
         ListView listView = (ListView)view.findViewById(R.id.listView);
         data=new ArrayList<>();
 
-        User friend1=new User("김동욱",5);
-        User friend2=new User("윤서원",3);
-        User friend3=new User("성경화",2);
-        User friend4=new User("안준영",3);
-
-        data.add(friend1);
-        data.add(friend2);
-        data.add(friend3);
-        data.add(friend4);
-
         adapter=new FriendListAdapter(getActivity(),R.layout.friendlist_item,data);
         listView.setAdapter(adapter);
 
