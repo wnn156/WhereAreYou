@@ -3,6 +3,8 @@ package com.example.jun.whereareyou.Data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONObject;
+
 public class User implements Parcelable {
     private String email;
     private String name;
@@ -20,6 +22,18 @@ public class User implements Parcelable {
 
     public User(){
 
+    }
+
+    public User(JSONObject o) {
+        try {
+        this.email = o.getString("memberId");
+        this.name = o.getString("name");
+        this.phone_number = o.getString("phone");
+        this.score = o.getInt("score");
+        this.count = o.getInt("creditCnt");
+        } catch(Exception e){
+
+        }
     }
 
 
@@ -108,4 +122,12 @@ public class User implements Parcelable {
                 ", count=" + count +
                 '}';
     }
+
+    public double get_credit() {
+        return count > 0 ? score / count : 0.0;
+    }
+
+
+
+
 }

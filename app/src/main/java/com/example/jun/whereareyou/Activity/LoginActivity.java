@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -149,9 +150,10 @@ public class LoginActivity extends AppCompatActivity {
             try {
 
 
-                JSONObject datas = new JSONObject(result);
+                JSONArray dataArr = new JSONArray(result);
+                JSONObject datas = dataArr.getJSONObject(0);
                 Toast.makeText(getApplicationContext(), datas.toString(), Toast.LENGTH_SHORT).show();//실패
-                User u = new User(datas.getString("MEMBERID"), datas.getString("NAME"), datas.getString("PHONE"), datas.getInt("SCORE"), datas.getInt("CREDITCNT") );
+                User u = new User(datas);
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 

@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        me = getIntent().getParcelableExtra("User");
+        me = getIntent().getParcelableExtra("USER");
         Log.d("User Main",me.toString());
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -212,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (position == 0) {
                 fragment = new FriendsFragment();
                 Bundle args = new Bundle();
-                args.putParcelable("User", me);
+                args.putParcelable("USER", me);
                 Log.d("User Friends",me.toString());
                 fragment.setArguments(args);
                 return fragment;
@@ -220,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else if(position==1) {
                 fragment = new ChatFragment();
                 Bundle args = new Bundle();
-                args.putParcelable("User", me);
+                args.putParcelable("USER", me);
                 Log.d("User Chat",me.toString());
                 fragment.setArguments(args);
                 return fragment;
@@ -228,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else {
                 fragment = new SetFragment();
                 Bundle args = new Bundle();
-                args.putParcelable("User", me);
+                args.putParcelable("USER", me);
                 fragment.setArguments(args);
                 return fragment;
             }
