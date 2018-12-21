@@ -30,17 +30,19 @@ public class Request_Dialog extends Dialog implements View.OnClickListener {
     private TextView cancelTv;
     private TextView searchTv;
     private Context context;
-    private User user = null;
+
+    private String name, phone;
 
     public Request_Dialog(@NonNull Context context) {
         super(context);
         this.context = context;
     }
 
-    public Request_Dialog(@NonNull Context context, User user) {
+    public Request_Dialog(@NonNull Context context, User newUser) {
         super(context);
         this.context = context;
-        this.user = user;
+        this.name = newUser.getName();
+        this.phone = newUser.getPhone_number();
     }
 
     @Override
@@ -54,10 +56,10 @@ public class Request_Dialog extends Dialog implements View.OnClickListener {
         cancelTv.setOnClickListener(this);
         searchTv.setOnClickListener(this);
 
-        if (user != null) {
-            TextView textView = findViewById(R.id.requestDialogTextView);
-            textView.setText(user.toString() + " 이 유저가 맞습니까?");
-        }
+
+        TextView textView = findViewById(R.id.requestDialogTextView);
+        textView.setText("이름 : " + name + "\n폰 번호 : " + phone + "\n이 유저가 맞습니까?");
+
     }
 
     @Override
