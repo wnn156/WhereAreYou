@@ -139,28 +139,31 @@ public class AddPromActivity extends AppCompatActivity {
         menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                time = "" + datePicker.getYear() + "/" + datePicker.getMonth() + "/'" +
-                        datePicker.getDayOfMonth() + " " + timePicker.getHour() + ":" +
+                time = "" + datePicker.getYear() + datePicker.getMonth() +
+                        datePicker.getDayOfMonth() + timePicker.getHour() +
                         timePicker.getMinute();
 
                 ListViewChatItem listViewChatItem = new ListViewChatItem(nameEt.getText().toString(),place.getText().toString(),time,selectedList,promise_id,latitude,longitude);
                 String key = databaseReference.child("CHAT").push().getKey();
                 listViewChatItem.setKey(key);
-                String sMessage = "promId=" + promise_id + "&prom_name=" + nameEt.getText().toString() + "&time=" + time+"place=" +place.getText().toString()+"&x=" + latitude+ "&y=" + longitude + "&chatKey=" + key;
-                new AddPromActivity.AddPromise().execute("http://172.20.10.3:3000/join-promise?" + sMessage);
+                String sMessage = "id=" + promise_id + "&prom_name=" + nameEt.getText().toString() + "&time=" + time+ "&place=" +place.getText().toString()+"&x=" + latitude+ "&y=" + longitude + "&chatKey=" + key;
+                System.out.println("PROMISE : QUERY="+sMessage);
+                new AddPromActivity.AddPromise().execute("http://172.20.10.3:3000/add-promise?" + sMessage);
 
 
+                selectedList.add(0,me);
                 for(int i = 0; i < selectedList.size(); i++) {
-                    sMessage = "promId=" + promise_id + "&memberId=" + selectedList.get(i);
+                    sMessage = "promId=" + promise_id + "&friendId=" + selectedList.get(i).getEmail();
                     new AddPromActivity.AddPartTask().execute("http://172.20.10.3:3000/join-promise?" + sMessage);
                 }
 
                 Intent intent = new Intent(getApplication(),MainActivity.class);
                 intent.putExtra("USER",me);
                 intent.putExtra("ListViewChatItem",listViewChatItem);
-                startActivity(intent);
+                setResult(1,intent);
                 Toast.makeText(getApplication(),"약속이 추가되었습니다.",Toast.LENGTH_SHORT);
 
+                finish();
 
                 //Toast.makeText(getApplication(),"확인 버튼 실행.",Toast.LENGTH_SHORT);
 
@@ -248,6 +251,7 @@ public class AddPromActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             try {
+                System.out.println("GET PROMISE ID : " + result);
                 promise_id = Integer.parseInt(result);
             } catch (Exception e) {
                 e.printStackTrace();
