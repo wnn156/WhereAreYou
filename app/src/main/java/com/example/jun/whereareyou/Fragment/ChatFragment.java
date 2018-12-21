@@ -1,6 +1,7 @@
 package com.example.jun.whereareyou.Fragment;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -47,13 +48,20 @@ public class ChatFragment extends Fragment {
     private ArrayList<ListViewChatItem> dataRequest;
     private static ArrayList<ListViewChatItem> data;
 
-    public static ChatFragment newInstance(ListViewChatItem listViewChatItem){
+    public static ChatFragment newInstance(Context context, ListViewChatItem listViewChatItem, User user){
         Bundle args = new Bundle();
 
         ChatFragment fragment = new ChatFragment();
+        if(data == null){
+            data = new ArrayList<>();
+        }
         data.add(listViewChatItem);
+        System.out.println("Data : " + data);
+        if(adapter == null){
+            adapter = new ChatlistAdapter(context,R.layout.chatlist_item,data);
+        }
         adapter.upDateList(data);
-
+        me = user;
         args.putParcelable("User",me);
         fragment.setArguments(args);
         return fragment;

@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         me = getIntent().getParcelableExtra("USER");
         Log.d("User Main", me.toString());
 
-        listViewChatItem = getIntent().getParcelableExtra("ListViewChatItem");
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -137,10 +136,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 anim();
                 Intent intent_prom = new Intent(this,AddPromActivity.class);
                 intent_prom.putExtra("USER",me);
-                if(listViewChatItem != null) {
-                    startActivity(intent_prom);
-                    ChatFragment.newInstance(listViewChatItem);
-                }
+                startActivityForResult(intent_prom,1);
+
                 /*Prom_Dialog prom_dialog = new Prom_Dialog(this,this);
                 prom_dialog.setDialogListener(new Prom_Dialog.MyDialogListener() {  // MyDialogListener 를 구현
                     @Override
@@ -176,6 +173,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode,resultCode,data);
+
+        if(requestCode == 1){
+            //selectedList.addAll((ArrayList<User>)data.getParcelableArrayListExtra("list"));
+
+
+            me = data.getParcelableExtra("USER");
+            listViewChatItem = data.getParcelableExtra("ListViewChatItem");
+            Log.d("ListViewChatItem in Main", listViewChatItem.toString());
+            ChatFragment.newInstance(this, listViewChatItem, me);
+
+        }
     }
     public void anim() {
 
