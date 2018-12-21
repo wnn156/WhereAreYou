@@ -41,5 +41,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9.5"
-        tools:context=".Activity.MapsActivity" />
+        tools:context=".Activity.SearchMapActivity" />
+
+    <Button
+        android:id="@+id/update_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="Button" />
 </LinearLayout>

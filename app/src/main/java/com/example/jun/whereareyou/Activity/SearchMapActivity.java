@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.jun.whereareyou.Data.GpsInfo;
 import com.example.jun.whereareyou.R;
@@ -53,13 +54,16 @@ public class SearchMapActivity extends FragmentActivity implements
         geocoder = new Geocoder(this);
         button = (Button) findViewById(R.id.buttonn);
 
+
         // 버튼 이벤트
         button.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "search Btn clicked", Toast.LENGTH_SHORT).show();
                 List<Address> addressList = null;
                 try {
                     // editText에 입력한 텍스트(주소, 지역, 장소 등)을 지오 코딩을 이용해 변환
+                    Toast.makeText(getApplicationContext(), "search Btn clicked", Toast.LENGTH_SHORT).show();
                     addressList = geocoder.getFromLocationName(
                             str, // 주소
                             10); // 최대 검색 결과 개수
@@ -80,11 +84,14 @@ public class SearchMapActivity extends FragmentActivity implements
                 System.out.println(latitude);
                 System.out.println(longitude);
 
+<<<<<<< HEAD
                 // 좌표(위도, 경도) 생성
+=======
+>>>>>>> 49caf94159098200501ddac426e180e7feb74f66
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
                 // 해당 좌표로 화면 줌
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 15));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 16));
             }
         });
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -120,7 +127,7 @@ public class SearchMapActivity extends FragmentActivity implements
         mMap = googleMap;
 
         LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 15);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
         mMap.moveCamera(cameraUpdate);
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
