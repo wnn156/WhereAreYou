@@ -8,26 +8,16 @@
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-<<<<<<< HEAD
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13_design_layout_snackbar.xml.flat",
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\88580478ca341ff78874209ba81e3cc7\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
-=======
-        "merged": "C:\\Android\\WhereAreYou\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_instagram_black.png.flat",
-        "source": "C:\\Android\\WhereAreYou\\WhereAreYou\\app\\src\\main\\res\\drawable-xxhdpi\\ic_instagram_black.png"
->>>>>>> 7a2e15523b76c8ce458c305e648719bdc76fe66a
     },
     {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-<<<<<<< HEAD
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_in.xml.flat",
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\88580478ca341ff78874209ba81e3cc7\\res\\anim\\design_snackbar_in.xml"
-=======
-        "merged": "C:\\Android\\WhereAreYou\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action.xml.flat",
-        "source": "C:\\Users\\안준영\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\1a599f58f05614478748087f3ef1026b\\res\\layout-v21\\notification_action.xml"
->>>>>>> 7a2e15523b76c8ce458c305e648719bdc76fe66a
     },
     {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_light.xml.flat",
@@ -802,16 +792,16 @@
         "source": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\src\\main\\res\\mipmap-xxhdpi\\evp_action_pause.xml"
     },
     {
+        "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus.png.flat",
+        "source": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\src\\main\\res\\drawable\\plus.png"
+    },
+    {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_add_to_story.png.flat",
         "source": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_add_to_story.png"
-    },
-    {
-        "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable_plus.png.flat",
-        "source": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\src\\main\\res\\drawable\\plus.png"
     },
     {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1814,12 +1804,12 @@
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
-        "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile.png.flat",
         "source": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\src\\main\\res\\drawable\\profile.png"
+    },
+    {
+        "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
+        "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",

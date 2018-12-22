@@ -3,6 +3,8 @@ package com.example.jun.whereareyou.Data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class ListViewChatItem implements Parcelable {
@@ -25,6 +27,21 @@ public class ListViewChatItem implements Parcelable {
         this.promise_id=promise_id;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public ListViewChatItem(JSONObject o) {
+        try {
+            this.chat_name = o.getString("name");
+            this.place = o.getString("place");
+            this.time = o.getString("time");
+            this.users = new ArrayList<>();
+            this.promise_id = o.getInt("id");
+            this.latitude = o.getDouble("x");
+            this.longitude = o.getDouble("y");
+        }catch (Exception e) {
+
+
+        }
     }
 
     protected ListViewChatItem(Parcel in) {
