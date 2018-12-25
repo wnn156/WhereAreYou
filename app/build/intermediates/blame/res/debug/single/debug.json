@@ -1408,6 +1408,10 @@
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\drawable_appicon.png.flat",
+        "source": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\src\\main\\res\\drawable\\appicon.png"
+    },
+    {
         "merged": "C:\\Users\\lg\\AndroidStudioProjects\\WhereAreYou\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",
         "source": "C:\\Users\\lg\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d36823241796f5a043a1463f9c436f78\\res\\layout\\abc_select_dialog_material.xml"
     },

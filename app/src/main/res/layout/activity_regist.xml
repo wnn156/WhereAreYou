@@ -4,18 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
 
-
-    <EditText
+    <TextView
+        android:id="@+id/regist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:layout_gravity="center"
+        android:text="회원가입"
+        android:textSize="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"/>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="이메일 입력"
-        android:id="@+id/etEmail" />
+        android:hint="아이디 입력" />
 
     <EditText
         android:layout_width="match_parent"
@@ -69,7 +76,6 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>

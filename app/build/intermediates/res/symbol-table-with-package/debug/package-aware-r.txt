@@ -1066,6 +1066,7 @@ drawable abc_vector_test
 drawable amu_bubble_mask
 drawable amu_bubble_shadow
 drawable android_construction
+drawable appicon
 drawable avd_hide_password
 drawable avd_show_password
 drawable book_list_back
@@ -1272,6 +1273,7 @@ id amu_text
 id appbar
 id async
 id auto
+id backBtn
 id badge
 id barrier
 id beginning
@@ -1368,7 +1370,6 @@ id list_item
 id login
 id main_content
 id map
-id map_info
 id masked
 id media_actions
 id message
@@ -1427,6 +1428,7 @@ id promdia_place_text
 id promdia_timepicker
 id promdia_title_edit
 id radio
+id regist
 id requestDialogTextView
 id requestListView
 id requestTextView

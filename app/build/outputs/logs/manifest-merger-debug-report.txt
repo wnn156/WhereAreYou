@@ -173,7 +173,7 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\lg\.gradle
 	android:roundIcon
 		ADDED from C:\Users\lg\AndroidStudioProjects\WhereAreYou\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from C:\Users\lg\AndroidStudioProjects\WhereAreYou\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\lg\AndroidStudioProjects\WhereAreYou\app\src\main\AndroidManifest.xml:11:9-41
 	android:allowBackup
 		ADDED from C:\Users\lg\AndroidStudioProjects\WhereAreYou\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme

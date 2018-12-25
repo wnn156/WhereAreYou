@@ -12,36 +12,41 @@ public class ListViewChatItem implements Parcelable {
     private String place;
     private String time;
     private String key; // 채팅방 이름
-    private ArrayList<User> users;
+    private ArrayList<User> participant;
     private int promise_id;
     private double latitude;
     private double longitude;
 
     //private ArrayList<User> users;
 
-    public ListViewChatItem(String chat_name, String place, String time, ArrayList<User> users, int promise_id,double latitude,double longitude) {
+    public ListViewChatItem(String chat_name, String place, String time, int promise_id,double latitude,double longitude, String key) {
         this.chat_name = chat_name;
         this.place = place;
         this.time = time;
-        this.users = users;
         this.promise_id=promise_id;
+        this.participant = new ArrayList<>();
         this.latitude = latitude;
         this.longitude = longitude;
+        this.key = key;
     }
 
     public ListViewChatItem(JSONObject o) {
         try {
+            this.participant = new ArrayList<>();
             this.chat_name = o.getString("name");
             this.place = o.getString("place");
             this.time = o.getString("time");
-            this.users = new ArrayList<>();
             this.promise_id = o.getInt("id");
             this.latitude = o.getDouble("x");
             this.longitude = o.getDouble("y");
+            this.key = o.getString("chatKey");
         }catch (Exception e) {
 
-
         }
+    }
+
+    public void addParcicipant(JSONObject o) {
+        participant.add(new User(o));
     }
 
     protected ListViewChatItem(Parcel in) {
@@ -49,7 +54,7 @@ public class ListViewChatItem implements Parcelable {
         place = in.readString();
         time = in.readString();
         key = in.readString();
-        users = in.readArrayList(User.class.getClassLoader());
+        participant = in.readArrayList(User.class.getClassLoader());
         promise_id = in.readInt();
         latitude = in.readDouble();
         longitude = in.readDouble();
@@ -91,12 +96,12 @@ public class ListViewChatItem implements Parcelable {
         this.longitude = longitude;
     }
 
-    public ArrayList<User> getUsers() {
-        return users;
+    public ArrayList<User> getparticipant() {
+        return participant;
     }
 
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
+    public void setParticipant(ArrayList<User> participant) {
+        this.participant = participant;
     }
 
     public String getKey() {
@@ -142,7 +147,7 @@ public class ListViewChatItem implements Parcelable {
         dest.writeString(place);
         dest.writeString(time);
         dest.writeString(key);
-        dest.writeList(users);
+        dest.writeList(participant);
         dest.writeInt(promise_id);
         dest.writeDouble(latitude);
         dest.writeDouble(longitude);
@@ -155,7 +160,7 @@ public class ListViewChatItem implements Parcelable {
                 ", place='" + place + '\'' +
                 ", time='" + time + '\'' +
                 ", key='" + key + '\'' +
-                ", users=" + users +
+                ", users=" + participant +
                 '}';
     }
 }

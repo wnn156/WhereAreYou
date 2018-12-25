@@ -143,9 +143,15 @@ public class AddPromActivity extends AppCompatActivity {
                         datePicker.getDayOfMonth() + timePicker.getHour() +
                         timePicker.getMinute();
 
-                ListViewChatItem listViewChatItem = new ListViewChatItem(nameEt.getText().toString(),place.getText().toString(),time,selectedList,promise_id,latitude,longitude);
                 String key = databaseReference.child("CHAT").push().getKey();
+
+
+
+
+
+                ListViewChatItem listViewChatItem = new ListViewChatItem(nameEt.getText().toString(), place.getText().toString(), time, promise_id, latitude, longitude, key);
                 listViewChatItem.setKey(key);
+
                 String sMessage = "id=" + promise_id + "&prom_name=" + nameEt.getText().toString() + "&time=" + time+ "&place=" +place.getText().toString()+"&x=" + latitude+ "&y=" + longitude + "&chatKey=" + key;
                 System.out.println("PROMISE : QUERY="+sMessage);
                 new AddPromActivity.AddPromise().execute("http://172.20.10.3:3000/add-promise?" + sMessage);
@@ -162,7 +168,7 @@ public class AddPromActivity extends AppCompatActivity {
                 intent.putExtra("ListViewChatItem",listViewChatItem);
                 setResult(1,intent);
                 Toast.makeText(getApplication(),"약속이 추가되었습니다.",Toast.LENGTH_SHORT);
-
+                startActivity(intent);
                 finish();
 
                 //Toast.makeText(getApplication(),"확인 버튼 실행.",Toast.LENGTH_SHORT);

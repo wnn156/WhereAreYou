@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();//실패
+            //Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();//실패
             if(result == null) {
                 Toast.makeText(getApplicationContext(), "ID가 없거나 비밀번호가 틀립니다.", Toast.LENGTH_SHORT).show();//실패
                 return;
@@ -152,9 +152,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 JSONArray dataArr = new JSONArray(result);
                 JSONObject datas = dataArr.getJSONObject(0);
-                Toast.makeText(getApplicationContext(), datas.toString(), Toast.LENGTH_SHORT).show();//실패
+                //Toast.makeText(getApplicationContext(), datas.toString(), Toast.LENGTH_SHORT).show();//실패
                 User u = new User(datas);
-
+                Log.d("datas",datas.toString());
+                Log.d("USER",u.toString());
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("LOGIN", "login");
                 intent.putExtra("USER",u);

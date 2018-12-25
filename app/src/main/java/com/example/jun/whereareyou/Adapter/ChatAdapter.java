@@ -24,7 +24,8 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
     private final static int TYPE_MY_SELF = 0;
     private final static int TYPE_ANOTHER = 1;
     private String mMyEmail;
-    private ArrayList<User> users;
+    private ArrayList<User> users = new ArrayList<User>();
+    private User me;
 
     public ChatAdapter(Context context, int resource) {
         super(context, resource);
@@ -44,6 +45,18 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
         holder.bindView(convertView);
         convertView.setTag(holder);
         return convertView;
+    }
+
+    public void setUser(ArrayList<User> u) {
+        this.users = u;
+    }
+
+    public void setMe(User u) {
+        this.me = u;
+    }
+
+    public void addUser(User u) {
+        this.users.add(u);
     }
 
     private View setMySelfView(LayoutInflater inflater) {
@@ -89,10 +102,14 @@ public class ChatAdapter extends ArrayAdapter<ChatDTO> {
     }
 
     @Override
+
+    // 오류
     public int getItemViewType(int position) {
         String email = getItem(position).getUserName();
         Log.d("GetItem.getUserName", getItem(position).getUserName());
-        if (email.equals(users.get(0).getEmail())) {
+        Log.d("POSITION", ""+position);
+
+        if (email.equals(me.getEmail())) {
             return TYPE_MY_SELF; // 나의 채팅내용
         } else {
             return TYPE_ANOTHER; // 상대방의 채팅내용

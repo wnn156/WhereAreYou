@@ -214,7 +214,7 @@ public class RegistActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            if(result == null) {
+            if(result.equals("undefined")) {
                 Toast.makeText(getApplicationContext(), "ID 중복", Toast.LENGTH_SHORT).show();//실패
                 return;
             }

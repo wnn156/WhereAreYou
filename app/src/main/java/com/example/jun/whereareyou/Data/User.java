@@ -11,13 +11,17 @@ public class User implements Parcelable {
     private String phone_number;
     private int score;
     private int count;
+    private double latitude;
+    private double longitude;
 
-    public User(String email, String name, String phone_number, int score, int count) {
+    public User(String email, String name, String phone_number, int score, int count,double latitude,double longitude) {
         this.email = email;
         this.name = name;
         this.phone_number = phone_number;
         this.score = score;
         this.count = count;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public User(){
@@ -31,6 +35,8 @@ public class User implements Parcelable {
         this.phone_number = o.getString("phone");
         this.score = o.getInt("score");
         this.count = o.getInt("creditCnt");
+        this.latitude = o.getDouble("latitude");
+        this.longitude = o.getDouble("longitude");
         } catch(Exception e){
 
         }
@@ -43,6 +49,8 @@ public class User implements Parcelable {
         phone_number = in.readString();
         score = in.readInt();
         count = in.readInt();
+        latitude = in.readDouble();
+        longitude = in.readDouble();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -56,6 +64,22 @@ public class User implements Parcelable {
             return new User[size];
         }
     };
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 
     public String getName() {
         return name;
@@ -110,6 +134,8 @@ public class User implements Parcelable {
         dest.writeString(phone_number);
         dest.writeInt(score);
         dest.writeInt(count);
+        dest.writeDouble(latitude);
+        dest.writeDouble(longitude);
     }
 
     @Override
@@ -120,6 +146,8 @@ public class User implements Parcelable {
                 ", phone_number='" + phone_number + '\'' +
                 ", score=" + score +
                 ", count=" + count +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
                 '}';
     }
 

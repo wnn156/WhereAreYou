@@ -43,4 +43,13 @@
         android:layout_weight="9.5"
         tools:context=".Activity.SearchMapActivity" />
 
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="채팅방으로"
+        android:textColor="@color/colorAccent"
+        android:background="@color/white"/>
+
 </LinearLayout>

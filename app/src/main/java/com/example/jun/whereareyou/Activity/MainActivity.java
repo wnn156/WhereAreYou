@@ -183,11 +183,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             me = data.getParcelableExtra("USER");
+
+            /*
             listViewChatItem = data.getParcelableExtra("ListViewChatItem");
             Log.d("ListViewChatItem in Main", listViewChatItem.toString());
-            ChatFragment.newInstance(this, listViewChatItem, me);
+            ChatFragment.newInstance(this, listViewChatItem, me);*/
+
+
 
         }
+
     }
     public void anim() {
 

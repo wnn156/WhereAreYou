@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.jun.whereareyou.Data.GpsInfo;
+import com.example.jun.whereareyou.Data.ListViewChatItem;
+import com.example.jun.whereareyou.Data.User;
 import com.example.jun.whereareyou.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
@@ -29,6 +31,7 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements
@@ -44,7 +47,13 @@ public class MapsActivity extends FragmentActivity implements
     private boolean mPermissionDenied = false;
     String str;
     private GpsInfo gps;
-
+    //ArrayList<User> participants;
+    private ListViewChatItem listViewChatItem;
+    Marker marker;
+    ArrayList<LatLng> participants_point = new ArrayList<LatLng>();
+    ArrayList<Polyline> polylines = new ArrayList<Polyline>();
+    User me;
+    Button closebtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +63,13 @@ public class MapsActivity extends FragmentActivity implements
         gps = new GpsInfo(this);
         geocoder = new Geocoder(this);
         button = (Button) findViewById(R.id.buttonn);
+        closebtn = (Button) findViewById(R.id.backBtn);
+        closebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
         // 버튼 이벤트
@@ -88,11 +104,11 @@ public class MapsActivity extends FragmentActivity implements
                 // 좌표(위도, 경도) 생성
 
                 LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
-                MarkerOptions markerOptions = new MarkerOptions();
+                /*MarkerOptions markerOptions = new MarkerOptions();
                 markerOptions.position(point).title("여기요?");
-                markerOptions.snippet(latitude.toString() + ", " + longitude.toString());
+                markerOptions.snippet(latitude.toString() + ", " + longitude.toString());*/
 
-                mMap.addMarker(markerOptions);
+              /*  mMap.addMarker(markerOptions);*/
                 // 해당 좌표로 화면 줌
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 16));
             }
@@ -130,20 +146,42 @@ public class MapsActivity extends FragmentActivity implements
         mMap = googleMap;
 
         LatLng DEFAULT_LOCATION = new LatLng(gps.getLatitude(), gps.getLongitude());
+
+
+        //participants = getIntent().getParcelableArrayListExtra("Participants");
+        listViewChatItem = getIntent().getParcelableExtra("ListViewChatItem");
+        me = getIntent().getParcelableExtra("USER");
+        LatLng prom_place = new LatLng(listViewChatItem.getLatitude(), listViewChatItem.getLongitude());
+        marker = mMap.addMarker(new MarkerOptions().position(prom_place).title(listViewChatItem.getChat_name()+" 약속장소").snippet(listViewChatItem.getLatitude() + ", " + listViewChatItem.getLongitude()));
+        marker.showInfoWindow();
+
+        LatLng mycurrent_place = new LatLng(gps.getLatitude(), gps.getLongitude());
+        marker = mMap.addMarker(new MarkerOptions().position(mycurrent_place).title("내위치").snippet(gps.getLatitude() + ", " + gps.getLongitude()));
+
+
+
+        for(int i=0;i<listViewChatItem.getparticipant().size();i++){
+            participants_point.add(new LatLng(listViewChatItem.getparticipant().get(i).getLatitude(),listViewChatItem.getparticipant().get(i).getLongitude()));
+
+            System.out.println("Participant : "+ participants_point);
+        }
+
+        System.out.println("GET CHATITEM : " + listViewChatItem);
+
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 16);
         mMap.moveCamera(cameraUpdate);
 
         Polyline polyline = mMap.addPolyline(new PolylineOptions()
                 .add(
-                        DEFAULT_LOCATION,
-                        new LatLng(DEFAULT_LOCATION.latitude + 0.01, DEFAULT_LOCATION.longitude + 0.01)));
-        Polyline polyline1 = mMap.addPolyline(new PolylineOptions()
-                .add(
-                        DEFAULT_LOCATION,
-                        new LatLng(DEFAULT_LOCATION.latitude + 0.02, DEFAULT_LOCATION.longitude + 0.05)));
-        Polyline polyline2 = mMap.addPolyline(new PolylineOptions()
-                .add(
-                        DEFAULT_LOCATION,
-                        new LatLng(DEFAULT_LOCATION.latitude - 0.025, DEFAULT_LOCATION.longitude - 0.033)));
+                        prom_place,
+                        mycurrent_place));
+        for(int i=0;i<listViewChatItem.getparticipant().size();i++){
+            if(listViewChatItem.getparticipant().get(i).getName().equals(me.getName())){
+                continue;
+            }
+            marker = mMap.addMarker(new MarkerOptions().position(participants_point.get(i)).title(listViewChatItem.getparticipant().get(i).getName()).snippet(participants_point.get(i).latitude + ", " +participants_point.get(i).longitude));
+            System.out.println("PolyLine "+i +": "+ listViewChatItem.getparticipant().get(i).getName());
+            polylines.add(mMap.addPolyline(new PolylineOptions().add(prom_place,participants_point.get(i))));
+        }
     }
 }
